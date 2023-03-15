@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - 2x2 yellow
+  - 1x2 yellow
+  - 1x2 orange
+  - 1x2 green
+  - Brick
+  - 2x3green
+  - 2x4bright_green
+  - 2x4green
+  - witheye1x1green
+  - plate2x3green
+  - plate2x10medium_blue
+  - plateround1x1white
+  - slopebrick452x2green
+  - 1x2light_grey
+  - 2x4light_grey
+  - witheye1x1white
+  - plate2x2dark_grey
+  - plate2x4blue
+  - plate2x6dark_grey
+  - slopebrickinv1x2dark_grey
+  - slopebrickinv2x2dark_grey
+  - slopebrick2x3dark_grey
+  - slopebricksmalllight_grey
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
