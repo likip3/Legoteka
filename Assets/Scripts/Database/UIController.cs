@@ -15,8 +15,11 @@ public class UIController : MonoBehaviour
     [SerializeField]
     private GameObject openButton;
 
-    [SerializeField]
+    //[SerializeField]
     private GameObject mark;
+
+    [SerializeField]
+    private BricksGridNoInstruction rootGrid;
 
     [SerializeField]
     private List<ListItem> bricks;
@@ -95,12 +98,18 @@ public class UIController : MonoBehaviour
         detalPreview.style.backgroundImage = new StyleBackground(Background.FromRenderTexture(renderTexture));
     }
 
+    [Obsolete("Не юзать, это тестовое")]
     private void ObjectSpawn(GameObject GM, Material material)
     {
         if (mark.transform.childCount > 0)
             Destroy(mark.transform.GetChild(0).gameObject);
         var GO = Instantiate(GM, Vector3.zero, Quaternion.identity, mark.transform);
         GO.GetComponent<MeshRenderer>().material = material;
+    }
+
+    private void ObjectBrickSpawn(GameObject GM, Material material)
+    {
+        rootGrid.StartPlacingBrick(GM.GetComponent<Brick>(), material);
     }
 
     private void ButtonSwitch(ListItem item, VisualElement extender)
@@ -126,7 +135,8 @@ public class UIController : MonoBehaviour
             var templateButton = templateButtonUXML.Instantiate().Q<Button>();
             templateButton.clicked += delegate
             {
-                ObjectSpawn(item.GM, det.Material);
+                //ObjectSpawn(item.GM, det.Material);
+                ObjectBrickSpawn(item.GM, det.Material);
                 ButtonVisualise(det.ID.ToString(), item.Tags, det.RenderTexture);
             };
             templateButton.style.backgroundImage = new StyleBackground(Background.FromRenderTexture(det.RenderTexture));

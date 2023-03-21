@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8864326152193670156}
   - component: {fileID: 5479111649030726078}
   - component: {fileID: 4413252213675350838}
+  - component: {fileID: 2773262818105057020}
   m_Layer: 0
   m_Name: brick 2x2(light grey)
   m_TagString: Untagged
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2773262818105057020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3692296258816653677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b96b27393778254cb2bc4cb9a5e8247, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainRenderer: {fileID: 0}
+  Size: {x: 1, y: 1}

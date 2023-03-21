@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3820326204956747779}
   - component: {fileID: 1350274402356479397}
   - component: {fileID: 2658524982659849933}
+  - component: {fileID: 876789000462185830}
   m_Layer: 0
   m_Name: plant leaves 4x3(light grey)
   m_TagString: Untagged
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &876789000462185830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3278445173460802596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b96b27393778254cb2bc4cb9a5e8247, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainRenderer: {fileID: 0}
+  Size: {x: 1, y: 1}

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5998054428478883145}
   - component: {fileID: 8102387042502710102}
   - component: {fileID: 354459299314572291}
+  - component: {fileID: 9162415914013797843}
   m_Layer: 0
   m_Name: arch 1x5x4(light grey)
   m_TagString: Untagged
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &9162415914013797843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7127609736329577875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b96b27393778254cb2bc4cb9a5e8247, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainRenderer: {fileID: 0}
+  Size: {x: 1, y: 1}

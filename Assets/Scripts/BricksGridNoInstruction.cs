@@ -35,6 +35,21 @@ public class BricksGridNoInstruction : MonoBehaviour
         }
     }
 
+    public void StartPlacingBrick(Brick buildingPrefab, Material material)
+    {
+        if (flyingBrick == null)
+        {
+            flyingBrick = Instantiate(buildingPrefab);
+            flyingBrick.GetComponent<MeshRenderer>().material = material;
+        }
+        else if (flyingBrick != null && flyingBrick == buildingPrefab)
+        {
+            Destroy(flyingBrick.gameObject);
+            flyingBrick = Instantiate(buildingPrefab);
+            flyingBrick.GetComponent<MeshRenderer>().material = material;
+            }
+    }
+
     private void Update()
     {
         if (Input.touchCount > 0 && !CameraControll.movingState)
