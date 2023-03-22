@@ -10,7 +10,6 @@ public class BricksGridNoInstruction : MonoBehaviour
     private Camera mainCamera;
     private float y = 0;
     private Touch touch;
-    private int step;
     private List<int> cList;
     private Stack<Brick> posStack;
     public AudioSource source;

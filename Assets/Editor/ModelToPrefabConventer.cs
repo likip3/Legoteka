@@ -33,7 +33,8 @@ public class ModelToPrefabConventer
         GameObject prefab = new GameObject();
         prefab.AddComponent<MeshFilter>().sharedMesh = model.GetComponent<MeshFilter>().sharedMesh;
         prefab.AddComponent<MeshRenderer>().sharedMaterial = model.GetComponent<MeshRenderer>().sharedMaterial;
-        prefab.AddComponent<Brick>();
+        prefab.AddComponent<Brick>().Size = new Vector2(0,0);
+        prefab.transform.rotation = Quaternion.Euler(-90, 0, 0);
 
         var savePath = path.Replace("Models", "Resources");
         savePath = savePath.Replace(".blend", ".prefab");

@@ -15,9 +15,6 @@ public class UIController : MonoBehaviour
     [SerializeField]
     private GameObject openButton;
 
-    //[SerializeField]
-    private GameObject mark;
-
     [SerializeField]
     private BricksGridNoInstruction rootGrid;
 
@@ -96,15 +93,6 @@ public class UIController : MonoBehaviour
         selectedItemTags.text = tags.ToString();
 
         detalPreview.style.backgroundImage = new StyleBackground(Background.FromRenderTexture(renderTexture));
-    }
-
-    [Obsolete("Не юзать, это тестовое")]
-    private void ObjectSpawn(GameObject GM, Material material)
-    {
-        if (mark.transform.childCount > 0)
-            Destroy(mark.transform.GetChild(0).gameObject);
-        var GO = Instantiate(GM, Vector3.zero, Quaternion.identity, mark.transform);
-        GO.GetComponent<MeshRenderer>().material = material;
     }
 
     private void ObjectBrickSpawn(GameObject GM, Material material)
