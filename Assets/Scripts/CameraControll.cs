@@ -4,30 +4,32 @@ using System.Collections;
 
 public class CameraControll : MonoBehaviour
 {
-    public enum Direction
-    { 
-        Horizontal,
-        Vertical,
-        None
-    }
-
     public Transform cameraParent;
-    public Camera mainCamera;
-    private float sensitivity = 0.005f;
-    private float rotateSensitivity = 0.1f;
-    private float zoomSensitivity = 0.05f;
-    private float zoomMin = 20;
-    private float zoomMax = 90;
-    private float YMin = 0;
-    private float YMax = 15;
+    public Transform target;
+    private Vector3 startPos;
+    private Vector3 delta;
+    private float zoomDistance;
+    private bool touched;
 
     public static bool movingState = false;
-    private bool touched;
-    private Vector3 startPos;
-    private Direction camDirection = Direction.None;
-    private Vector3 delta;
-    private float zoomPrevMagnitude;
-    private bool firstZoomTouch;
+    public float zoomMin = 5;
+    public float zoomMax = 20;
+    public float minAngle = -20f;
+    public float maxAngle = 70f;
+    private float rotateSensitivity = 0.1f;
+    private float tiltSensitivity = 0.1f;
+    private float zoomSpeed = 1f;
+    private float x = 0.0f;
+    private float y = 0.0f;
+    private float angle = 0f;
+    
+    void Start()
+    {
+        Vector3 angles = transform.eulerAngles;
+        x = angles.y;
+        y = angles.x;
+        zoomDistance = Vector3.Distance(transform.position, target.position);
+    }
 
     private void OnEnable()
     {
@@ -50,63 +52,58 @@ public class CameraControll : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Mouse0))
         {
             touched = false;
-            camDirection = Direction.None;
         }
         if (Input.touchCount == 2)
+        {
             ZoomCamera();
+            touched = false;
+        }
         else
         {
-            firstZoomTouch = true;
             if (touched) MoveCamera();
         }
-    }
-
-    private void Block()
-    {
-        
     }
 
     public void MoveCamera()
     {
         delta = startPos - Input.mousePosition;
         startPos = Input.mousePosition;
-        if (camDirection == Direction.Horizontal || 
-            camDirection == Direction.None && Mathf.Abs(delta.x) >= Mathf.Abs(delta.y) && Mathf.Abs(delta.x) > 1.0f)
+
+        if (Mathf.Abs(delta.x) > 1.0f)
         {
-            camDirection = Direction.Horizontal;
-            cameraParent.transform.Rotate(0, -delta.x * rotateSensitivity, 0);
+            float horizontal = -delta.x * rotateSensitivity;
+            cameraParent.transform.RotateAround(target.position, Vector3.up, horizontal);
         }
-        else if (camDirection == Direction.Vertical || 
-            camDirection == Direction.None && Mathf.Abs(delta.x) < Mathf.Abs(delta.y) && Mathf.Abs(delta.y) > 1.0f)
+
+        if (Mathf.Abs(delta.y) > 1.0f)
         {
-            camDirection = Direction.Vertical;
-            transform.position = new Vector3(transform.position.x,
-                Mathf.Clamp(transform.position.y + delta.y * sensitivity, YMin, YMax), 
-                transform.position.z);
+            float vertical = delta.y * tiltSensitivity;
+            angle += vertical;
+            angle = Mathf.Clamp(angle, minAngle, maxAngle);
+            if (angle == maxAngle || angle == minAngle) vertical = 0f;
+            cameraParent.transform.RotateAround(target.position, cameraParent.transform.right, vertical);
         }
     }
 
     public void ZoomCamera()
     {
-        Touch touch1 = Input.GetTouch(0);
-        Touch touch2 = Input.GetTouch(1);
+        Touch touchZero = Input.GetTouch(0);
+        Touch touchOne = Input.GetTouch(1);
 
-        if (firstZoomTouch)
-        {
-            zoomPrevMagnitude = (touch1.position - touch2.position).magnitude;
-            firstZoomTouch = false;
-        }
+        Vector2 touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
+        Vector2 touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
 
-        float currentMagnitude = (touch1.position - touch2.position).magnitude;
-        float delta = currentMagnitude - zoomPrevMagnitude;
-        zoomPrevMagnitude = currentMagnitude;
+        float prevTouchDeltaMag = (touchZeroPrevPos - touchOnePrevPos).magnitude;
+        float touchDeltaMag = (touchZero.position - touchOne.position).magnitude;
+        float deltaMagnitudeDiff = (prevTouchDeltaMag - touchDeltaMag) * 0.01f;
 
-        mainCamera.fieldOfView = Mathf.Clamp(mainCamera.fieldOfView - delta * zoomSensitivity, zoomMin, zoomMax);
+        zoomDistance += deltaMagnitudeDiff * zoomSpeed;
+        zoomDistance = Mathf.Clamp(zoomDistance, zoomMin, zoomMax);
+        transform.position = target.position - transform.forward * zoomDistance;
     }
 
     public void OnEnableCamera()
     {
-        
         movingState = true;
     }
 
