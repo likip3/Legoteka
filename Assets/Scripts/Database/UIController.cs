@@ -16,7 +16,7 @@ public class UIController : MonoBehaviour
     private GameObject openButton;
 
     [SerializeField]
-    private BricksGridNoInstruction rootGrid;
+    private FreeModeBrickPlacer rootGrid;
 
     [SerializeField]
     private List<ListItem> bricks;

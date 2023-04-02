@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2539965240291616525}
   - component: {fileID: 5185178086459531681}
   - component: {fileID: 669593171436966618}
+  - component: {fileID: 3460085364911700169}
   m_Layer: 0
   m_Name: plant flower stem(light grey)
   m_TagString: Untagged
@@ -98,3 +99,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainRenderer: {fileID: 0}
   Size: {x: 0, y: 0}
+--- !u!65 &3460085364911700169
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8300016487305715990}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1.6930001, y: 1.5279999, z: 2.2565}
+  m_Center: {x: -0.056000143, y: -0.2005001, z: 1.12825}

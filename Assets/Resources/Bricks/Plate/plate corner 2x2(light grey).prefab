@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3060478950488712268}
   - component: {fileID: 2957609260650995575}
   - component: {fileID: 3968355981241089751}
+  - component: {fileID: 8977079556053719066}
   m_Layer: 0
   m_Name: plate corner 2x2(light grey)
   m_TagString: Untagged
@@ -98,3 +99,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainRenderer: {fileID: 0}
   Size: {x: 0, y: 0}
+--- !u!65 &8977079556053719066
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8590564135100810509}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.6}
+  m_Center: {x: -0.5, y: 0.5, z: 0.3}

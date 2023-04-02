@@ -9,7 +9,6 @@ public class BricksGrid : MonoBehaviour
     private Brick[,] grid;
     private Brick flyingBrick;
     private Camera mainCamera;
-    private float y = 0;
     private Touch touch;
     public InstructionMaker instruction;
     private int step;
@@ -91,7 +90,6 @@ public class BricksGrid : MonoBehaviour
                         uiObjectWrong.SetActive(true);
                         source.PlayOneShot(wrong);
                         Destroy(flyingBrick.gameObject);
-                        y = 0;
                         StartCoroutine("Wait");                        
                     }
                         
@@ -112,7 +110,6 @@ public class BricksGrid : MonoBehaviour
                 grid[placeX + x, placeY + y] = flyingBrick;
             }
         }
-        y = 0;
         flyingBrick = null;
     }
 

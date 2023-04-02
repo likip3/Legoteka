@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2619343886800465867}
   - component: {fileID: 7832890126260925626}
   - component: {fileID: 3385248454558451947}
+  - component: {fileID: 9213481296074325529}
   m_Layer: 0
   m_Name: plate round 1x1(light grey)
   m_TagString: Untagged
@@ -98,3 +99,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainRenderer: {fileID: 0}
   Size: {x: 0, y: 0}
+--- !u!65 &9213481296074325529
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459306659896232442}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 0.6}
+  m_Center: {x: 0, y: 0, z: 0.30000025}

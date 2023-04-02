@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1930473860316056755}
   - component: {fileID: 4169252547007948044}
   - component: {fileID: 6490570285095606764}
+  - component: {fileID: 5256569848080857999}
   m_Layer: 0
   m_Name: slope brick 45 inv 1x2(light grey)
   m_TagString: Untagged
@@ -98,3 +99,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainRenderer: {fileID: 0}
   Size: {x: 0, y: 0}
+--- !u!65 &5256569848080857999
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228890607310891157}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1.4}
+  m_Center: {x: 0, y: -0.48125002, z: 0.7}

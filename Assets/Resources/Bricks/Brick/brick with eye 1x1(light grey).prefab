@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3193075898286614182}
   - component: {fileID: 1659604090698233737}
   - component: {fileID: 687478833456116954}
+  - component: {fileID: 1644752622107318034}
   m_Layer: 0
   m_Name: brick with eye 1x1(light grey)
   m_TagString: Untagged
@@ -98,3 +99,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainRenderer: {fileID: 0}
   Size: {x: 0, y: 0}
+--- !u!65 &1644752622107318034
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8241499668564014180}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1.4}
+  m_Center: {x: 0, y: 0, z: 0.7}

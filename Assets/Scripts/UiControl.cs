@@ -6,9 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class UiControl : MonoBehaviour
 {
-    private void Start()
+    private void Update()
     {
-
+        if (Input.GetKeyUp(KeyCode.Escape))
+            BackToMainMenu();
     }
     public void SceneSettings()
     {

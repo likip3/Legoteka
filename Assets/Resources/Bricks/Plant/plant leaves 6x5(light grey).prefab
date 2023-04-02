@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8562446769325994872}
   - component: {fileID: 7225744702438043756}
   - component: {fileID: 1954362060476989400}
+  - component: {fileID: 1963057423899128212}
   m_Layer: 0
   m_Name: plant leaves 6x5(light grey)
   m_TagString: Untagged
@@ -98,3 +99,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainRenderer: {fileID: 0}
   Size: {x: 0, y: 0}
+--- !u!65 &1963057423899128212
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9134754658372823993}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 4.8, y: 5.8, z: 0.6000001}
+  m_Center: {x: 0, y: -0.5, z: 0.2999998}
