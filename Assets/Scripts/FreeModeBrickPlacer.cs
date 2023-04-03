@@ -8,6 +8,7 @@ public class FreeModeBrickPlacer : MonoBehaviour
 
     private Transform controllableBrick;
     private Stack<GameObject> brickStack = new();
+    private bool isDeleteRay;
 
 
     private Box boxToRender;
@@ -28,8 +29,25 @@ public class FreeModeBrickPlacer : MonoBehaviour
     private void FixedUpdate()
     {
         PlaceCordsForBrick();
+        DeleteRayCast();
     }
 
+    private void DeleteRayCast()
+    {
+        if (!isDeleteRay) return;
+
+        if (Input.touchCount <= 0 || CameraControll.movingState)
+            return;
+
+        var touch = Input.GetTouch(0);
+        var ray = mainCamera.ScreenPointToRay(touch.position);
+
+        if (!Physics.Raycast(ray, out var hit) || hit.collider.gameObject.layer == 7)
+            return;
+
+        Debug.DrawRay(ray.origin, ray.direction,Color.red,hit.distance);
+
+    }
 
     private void PlaceCordsForBrick()
     {
@@ -97,7 +115,7 @@ public class FreeModeBrickPlacer : MonoBehaviour
         controllableBrick.transform.position = new Vector3(x, y, z);
     }
 
-    public void SelectBrick(Brick buildingPrefab)
+    public void StartPlacingBrick(Brick buildingPrefab)
     {
         if (controllableBrick == null)
             controllableBrick = Instantiate(buildingPrefab).transform;
@@ -107,6 +125,7 @@ public class FreeModeBrickPlacer : MonoBehaviour
             controllableBrick = Instantiate(buildingPrefab).transform;
         }
         controllableBrick.gameObject.layer = 9;
+        CameraControll.movingState = false;
     }
 
     public void StartPlacingBrick(Brick buildingPrefab, Material material)
@@ -120,6 +139,7 @@ public class FreeModeBrickPlacer : MonoBehaviour
         }
         controllableBrick.GetComponent<MeshRenderer>().material = material;
         controllableBrick.gameObject.layer = 9;
+        CameraControll.movingState = false;
     }
 
 
@@ -149,9 +169,23 @@ public class FreeModeBrickPlacer : MonoBehaviour
 
     public void UnSelectBrick()
     {
+        CameraControll.movingState = true;
         if (controllableBrick == null) return;
         Destroy(controllableBrick.gameObject);
         controllableBrick = null;
+    }
+
+    public void DeleteRayOn()
+    {
+        UnSelectBrick();
+        CameraControll.movingState = false;
+        isDeleteRay = true;
+    }
+
+    public void DeleteRayOff()
+    {
+        CameraControll.movingState = true;
+        isDeleteRay = false;
     }
 
     #region DebugDrawBox
