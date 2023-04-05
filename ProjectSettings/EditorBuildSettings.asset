@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HorseWithHelper.unity
     guid: fc55ef6d1c8acf144a6099cc46b74dcd
+  - enabled: 1
+    path: Assets/Scenes/ExitMenu.unity
+    guid: 20839fc82785b3049bdb930937574757
   m_configObjects: {}

@@ -8,9 +8,19 @@ public class UiControl : MonoBehaviour
 {
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Escape))
-            BackToMainMenu();
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            if (SceneManager.GetActiveScene().name == "MainMenu")
+            {
+                SceneManager.LoadScene("ExitMenu");
+            }
+            else
+            {
+                SceneManager.LoadScene("MainMenu");
+            }
+        }
     }
+
     public void SceneSettings()
     {
         SceneManager.LoadScene("Settings");
@@ -51,9 +61,19 @@ public class UiControl : MonoBehaviour
         SceneManager.LoadScene("ChooseCrocodile");
     }
 
+    public void SceneExitMenu()
+    {
+        SceneManager.LoadScene("ExitMenu");
+    }
+
     public void BackToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void CloseApp()
+    {
+        Application.Quit();
     }
 
     public void InstructionGiraffe()
