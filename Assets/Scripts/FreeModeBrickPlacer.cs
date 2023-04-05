@@ -9,6 +9,8 @@ public class FreeModeBrickPlacer : MonoBehaviour
     private Transform controllableBrick;
     private Stack<GameObject> brickStack = new();
     private bool isDeleteRay;
+    private GameObject highlightedBrick;
+    private bool unPress;
 
 
     private Box boxToRender;
@@ -24,6 +26,9 @@ public class FreeModeBrickPlacer : MonoBehaviour
     {
         if (isBoxRender)
             DrawBox(boxToRender, colorBox, 0);
+
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended && isDeleteRay && highlightedBrick != null)
+            unPress = true;
     }
 
     private void FixedUpdate()
@@ -36,16 +41,41 @@ public class FreeModeBrickPlacer : MonoBehaviour
     {
         if (!isDeleteRay) return;
 
+        if (highlightedBrick != null && unPress)
+        {
+            Destroy(highlightedBrick);
+            highlightedBrick = null;
+            unPress = false;
+        }
+
         if (Input.touchCount <= 0 || CameraControll.movingState)
             return;
+
+
 
         var touch = Input.GetTouch(0);
         var ray = mainCamera.ScreenPointToRay(touch.position);
 
         if (!Physics.Raycast(ray, out var hit) || hit.collider.gameObject.layer == 7)
+        {
+            highlightedBrick = null;
             return;
+        }
 
-        Debug.DrawRay(ray.origin, ray.direction,Color.red,hit.distance);
+        Debug.DrawRay(ray.origin, ray.direction, Color.red, hit.distance);
+
+        if (hit.collider.gameObject == highlightedBrick) return;
+
+        highlightedBrick = hit.collider.gameObject;
+
+        //if (hit.collider.TryGetComponent<Outlinable>(out var outlinable))
+        //    outlinable.enabled = true;
+        //else
+        //{
+        //    outlinable = hit.collider.gameObject.AddComponent<Outlinable>();
+        //    outlinable.OutlineParameters.FillPass.Shader = Resources.Load<Shader>("Easy performant outline/Shaders/Fills/Interlaced");
+        //}
+
 
     }
 
@@ -164,7 +194,15 @@ public class FreeModeBrickPlacer : MonoBehaviour
     public void Undo()
     {
         if (brickStack.Count != 0)
-            Destroy(brickStack.Pop().gameObject);
+        { 
+            var gm = brickStack.Pop().gameObject;
+            if (gm == null)
+            {
+                Undo();
+                return;
+            }
+            Destroy(gm);
+        }
     }
 
     public void UnSelectBrick()
@@ -180,6 +218,13 @@ public class FreeModeBrickPlacer : MonoBehaviour
         UnSelectBrick();
         CameraControll.movingState = false;
         isDeleteRay = true;
+    }
+
+    public void DeleteRayToggle()
+    {
+        if (isDeleteRay)
+            DeleteRayOff();
+        else DeleteRayOn();
     }
 
     public void DeleteRayOff()
