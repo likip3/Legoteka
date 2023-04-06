@@ -40,7 +40,8 @@ public class ModelToPrefabConventer
         var savePath = path.Replace("Models", "Resources");
         savePath = savePath.Replace(".blend", ".prefab");
 
-        PrefabUtility.SaveAsPrefabAsset(prefab, savePath);
+        if (!System.IO.Directory.Exists(savePath))
+            PrefabUtility.SaveAsPrefabAsset(prefab, savePath);
         Object.DestroyImmediate(prefab);
     }
 }

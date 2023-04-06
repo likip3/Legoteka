@@ -38,6 +38,34 @@ public static class BrickDatabase
         }
     }
 
+
+    public static bool IsCategoryNameTaken(string name)
+    {
+        foreach (var item in bricksCategories)
+        {
+            if (item.Name == name)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static bool IsBrickIDTaken(string id)
+    {
+        foreach (var item in bricksCategories)
+        {
+            foreach (var brick in item.Bricks)
+            {
+                if (brick.ID == id)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     public static ListItem AddCategory(string name)
     {
         var tempCat = new ListItem(name);
@@ -111,7 +139,11 @@ public class ListItem
 
     public void AddItem()
     {
-        AddItem(rnd.Next(100, 99999).ToString());
+        var id = rnd.Next(100, 99999);
+        while (BrickDatabase.IsBrickIDTaken(id.ToString()))
+            id += 1;
+
+        AddItem(id.ToString());
     }
 
     public void AddItem(string id)

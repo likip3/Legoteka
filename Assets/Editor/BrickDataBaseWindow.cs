@@ -204,7 +204,10 @@ public class BrickDataBaseWindow : EditorWindow
 
     private void AddCategory_Clicked(MouseUpEvent evt)
     {
-        BrickDatabase.AddCategory("New Category");
+        var name = "New Category";
+        while (BrickDatabase.IsCategoryNameTaken(name))
+            name += 1;
+        BrickDatabase.AddCategory(name);
         UpdateCategoryList();
     }
 
