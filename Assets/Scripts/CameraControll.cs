@@ -29,6 +29,7 @@ public class CameraControll : MonoBehaviour
         x = angles.y;
         y = angles.x;
         zoomDistance = Vector3.Distance(transform.position, target.position);
+        OnEnableCamera();
     }
 
     private void OnEnable()

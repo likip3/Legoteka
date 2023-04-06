@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6357606522480358135}
   - component: {fileID: 3351268360562850460}
   - component: {fileID: 3018045354543412540}
+  - component: {fileID: 1523179757}
   m_Layer: 0
   m_Name: arch 1x3x3(light grey)
   m_TagString: Untagged
@@ -34,7 +35,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &2397795907830141886
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -110,5 +111,18 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 3, z: 3.8}
-  m_Center: {x: 0, y: 1, z: 1.9}
+  m_Size: {x: 1, y: 1, z: 2.6}
+  m_Center: {x: 0, y: 0, z: 1.3}
+--- !u!65 &1523179757
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8477240749485063487}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1.5, z: 3.3}

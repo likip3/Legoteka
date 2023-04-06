@@ -62,7 +62,7 @@ public class FreeModeBrickPlacer : MonoBehaviour
             return;
         }
 
-        Debug.DrawRay(ray.origin, ray.direction, Color.red, hit.distance);
+        Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.red);
 
         if (hit.collider.gameObject == highlightedBrick) return;
 
@@ -86,6 +86,8 @@ public class FreeModeBrickPlacer : MonoBehaviour
 
         if (Input.touchCount <= 0 || CameraControll.movingState)
             return;
+
+        isDeleteRay = false;
 
         var touch = Input.GetTouch(0);
 
