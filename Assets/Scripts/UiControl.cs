@@ -26,6 +26,11 @@ public class UiControl : MonoBehaviour
         SceneManager.LoadScene("Settings");
     }
 
+    public void FreeModeScene()
+    {
+        SceneManager.LoadScene("FreeMode");
+    }
+
     public void CrocodileWithHelper()
     {
         SceneManager.LoadScene("CrocodileWithHelper");
