@@ -12,10 +12,12 @@ public class FreeModeBrickPlacer : MonoBehaviour
     private GameObject highlightedBrick;
     private bool unPress;
 
-
     private Box boxToRender;
     private Color colorBox;
     private bool isBoxRender;
+
+    [SerializeField]
+    private AudioSource soundSource;
 
     private void Awake()
     {
@@ -29,6 +31,53 @@ public class FreeModeBrickPlacer : MonoBehaviour
 
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended && isDeleteRay && highlightedBrick != null)
             unPress = true;
+    }
+
+    public void OnSavePresed() => SaveBrickState("Тестовыя абоба");
+    public void OnLoadPresed() => LoadBrickState("Тестовыя абоба");
+
+
+    public static void SaveBrickState(string name)
+    {
+        BrickCollectionXML brickColl = SceneToBrickCol(name);
+        SaveLoadSystem.SaveXml(brickColl, "/FreeModeSave/");
+    }
+
+    public static BrickCollectionXML SceneToBrickCol(string name)
+    {
+        var brickColl = new BrickCollectionXML(name);
+        foreach (var brick in GameObject.FindGameObjectsWithTag("BrickOnScene"))
+        {
+            var brickData = brick.GetComponent<Brick>();
+            brickColl.BrickArray.Add(new BrickXML(brickData.ID, brick.transform.position, brick.transform.rotation));
+        }
+
+        return brickColl;
+    }
+
+    public static void LoadBrickState(string name)
+    {
+        var brickColl = SaveLoadSystem.DeXml(name, "/FreeModeSave/");
+        ToSceneFromBrickCol(brickColl);
+    }
+
+    public static void ToSceneFromBrickCol(BrickCollectionXML brickColl)
+    {
+        foreach (var brick in brickColl.BrickArray)
+        {
+            var brickGM = Instantiate(SQLiteTasker.BrickDict[brick.brickID]);
+            brickGM.transform.SetPositionAndRotation(brick.position, brick.rotation);
+            foreach (var col in brickGM.GetComponents<BoxCollider>())
+            {
+                col.enabled = true;
+                col.size += new Vector3(0.001f, 0.001f);
+            }
+
+            Color color = SQLiteTasker.GetColorById(brick.brickID);
+            brickGM.color = color;
+            brickGM.ID = brick.brickID;
+            brickGM.GetComponent<MeshRenderer>().material.color = color;
+        }
     }
 
     private void FixedUpdate()
@@ -184,6 +233,9 @@ public class FreeModeBrickPlacer : MonoBehaviour
             col.size += new Vector3(0.001f, 0.001f);
         }
         controllableBrick.gameObject.layer = 0;
+        soundSource.pitch = Random.Range(.8f,2.5f);
+        soundSource.transform.position = controllableBrick.position;
+        soundSource.Play();
         controllableBrick = null;
     }
 

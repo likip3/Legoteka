@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 928128516}
   m_Layer: 0
   m_Name: arch 1x5x4(light grey)
-  m_TagString: Untagged
+  m_TagString: BrickOnScene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,8 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b96b27393778254cb2bc4cb9a5e8247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainRenderer: {fileID: 0}
-  Size: {x: 0, y: 0}
+  color: {r: 0, g: 0, b: 0, a: 0}
+  ID: 
 --- !u!65 &3482490163847552265
 BoxCollider:
   m_ObjectHideFlags: 0

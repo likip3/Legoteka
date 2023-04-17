@@ -103,13 +103,13 @@ public class BricksGrid : MonoBehaviour
 
     private void PlaceFlyingBrick(int placeX, int placeY)
     {
-        for (int x = 0; x < flyingBrick.Size.x; x++)
-        {
-            for (int y = 0; y < flyingBrick.Size.y; y++)
-            {
-                grid[placeX + x, placeY + y] = flyingBrick;
-            }
-        }
+        //for (int x = 0; x < flyingBrick.Size.x; x++)
+        //{
+        //    for (int y = 0; y < flyingBrick.Size.y; y++)
+        //    {
+        //        grid[placeX + x, placeY + y] = flyingBrick;
+        //    }
+        //}
         flyingBrick = null;
     }
 

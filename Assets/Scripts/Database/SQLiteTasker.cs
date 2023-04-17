@@ -14,9 +14,21 @@ public static class SQLiteTasker
         streamingAssetsPath = Application.streamingAssetsPath;
         persistentDataPath = Application.persistentDataPath;
     }
-
+    
+    private static Dictionary<string, Brick> brickDict;
+    private static Dictionary<string, Color> colorDict;
     private static string persistentDataPath;
     private static string streamingAssetsPath;
+
+    public static Dictionary<string, Brick> BrickDict
+    {
+        get
+        {
+            if (brickDict is null)
+                return GetAllBrickDictAsync().Result;
+            return brickDict;
+        }
+    }
 
     public async static void LoadFromSQLite()
     {
@@ -76,6 +88,46 @@ public static class SQLiteTasker
             }
         }
 #endif
+    }
+
+
+    public static async Task<Dictionary<string, Brick>> GetAllBrickDictAsync()
+    {
+        brickDict = new();
+        colorDict = new();
+        IDbConnection dbConnection = await OpenDatabaseAsync();
+        IDbCommand dbCommandReadValues = dbConnection.CreateCommand();
+        dbCommandReadValues.CommandText = "SELECT * FROM bricks";
+        IDataReader dataReader = dbCommandReadValues.ExecuteReader();
+        while (dataReader.Read())
+        {
+            var cmd = dbConnection.CreateCommand();
+            cmd.CommandText = "SELECT gameObjectPath FROM bricksCategories WHERE @brickName = bricksCategories.brickName";
+            var dbDataParameter = cmd.CreateParameter();
+            dbDataParameter.ParameterName = "@brickName";
+            dbDataParameter.Value = dataReader.GetString(0);
+            cmd.Parameters.Add(dbDataParameter);
+
+            IDataReader dataReaderCat = cmd.ExecuteReader();
+            dataReaderCat.Read();
+
+            var brickFromRes = Resources.Load<Brick>(dataReaderCat.GetString(0));
+            brickFromRes.ID = dataReader.GetString(1);
+
+            int argb = dataReader.GetInt32(2);
+            var color = new Color(((argb >> 16) & 0xFF) / 255.0f,
+                                    ((argb >> 8) & 0xFF) / 255.0f,
+                                    (argb & 0xFF) / 255.0f,
+                                    ((argb >> 24) & 0xFF) / 255.0f);
+            brickDict.Add(dataReader.GetString(1), brickFromRes);
+            colorDict.Add(dataReader.GetString(1), color);
+        }
+        return brickDict;
+    }
+
+    public static Color GetColorById(string ID)
+    {
+        return colorDict[ID];
     }
 
     private static void AddCategory(IDbConnection dbConnection, string brickName, string path, int? tags)

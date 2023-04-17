@@ -87,13 +87,13 @@ public class BricksGridNoInstruction : MonoBehaviour
     {
         var placeX = cList[0];
         var placeY = cList[1];
-        for (int x = 0; x < flyingBrick.Size.x; x++)
-        {
-            for (int y = 0; y < flyingBrick.Size.y; y++)
-            {
-                grid[placeX + x, placeY + y] = flyingBrick;
-            }
-        }
+        //for (int x = 0; x < flyingBrick.Size.x; x++)
+        //{
+        //    for (int y = 0; y < flyingBrick.Size.y; y++)
+        //    {
+        //        grid[placeX + x, placeY + y] = flyingBrick;
+        //    }
+        //}
         source.PlayOneShot(audioClip);
         posStack.Push(flyingBrick);
         y = 0;

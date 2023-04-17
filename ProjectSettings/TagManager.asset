@@ -28,6 +28,7 @@ TagManager:
   - slopebrick2x3dark_grey
   - slopebricksmalllight_grey
   - uiDrag
+  - BrickOnScene
   layers:
   - Default
   - TransparentFX

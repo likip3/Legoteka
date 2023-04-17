@@ -95,9 +95,12 @@ public class UIController : MonoBehaviour
         detalPreview.style.backgroundImage = new StyleBackground(Background.FromRenderTexture(renderTexture));
     }
 
-    private void ObjectBrickSpawn(GameObject GM, Material material)
+    private void ObjectBrickSpawn(GameObject GM, BrickDBItem brickDBItem)
     {
-        rootGrid.StartPlacingBrick(GM.GetComponent<Brick>(), material);
+        Brick buildingPrefab = GM.GetComponent<Brick>();
+        buildingPrefab.ID = brickDBItem.ID;
+        buildingPrefab.color = brickDBItem.Color;
+        rootGrid.StartPlacingBrick(buildingPrefab, brickDBItem.Material);
     }
 
     private void ButtonSwitch(ListItem item, VisualElement extender)
@@ -124,7 +127,7 @@ public class UIController : MonoBehaviour
             templateButton.clicked += delegate
             {
                 //ObjectSpawn(item.GM, det.Material);
-                ObjectBrickSpawn(item.GM, det.Material);
+                ObjectBrickSpawn(item.GM, det);
                 ButtonVisualise(det.ID.ToString(), item.Tags, det.RenderTexture);
             };
             templateButton.style.backgroundImage = new StyleBackground(Background.FromRenderTexture(det.RenderTexture));
