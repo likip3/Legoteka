@@ -5,6 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class SaveLoadButton : MonoBehaviour
 {
-    public void SaveScene() => SaveLoadSystem.SaveXml(FreeModeBrickPlacer.SceneToBrickCol(SceneManager.GetActiveScene().name), "/" + SceneManager.GetActiveScene().name + "/");
-    public void LoadScene() => FreeModeBrickPlacer.ToSceneFromBrickCol(SaveLoadSystem.DeXml(SceneManager.GetActiveScene().name, "/" + SceneManager.GetActiveScene().name + "/"));
+    public void SaveScene() => SaveLoadSystem.SaveXml(FreeModeBrickPlacer.SceneToBrickCol(SceneManager.GetActiveScene().name), "/Story/");
+    public void LoadScene() => FreeModeBrickPlacer.ToSceneFromBrickCol(SaveLoadSystem.DeXml(SceneManager.GetActiveScene().name, "/Story/"));
 }

@@ -21,16 +21,12 @@ public class SaveFilesItem : MonoBehaviour
 
     private void OnSaveClicked(string name)
     {
-#if UNITY_EDITOR
-        File.Copy(Application.persistentDataPath + "/FreeModeSave/" + name, "C:/Users/%USERNAME%/Downloads");
-#elif UNITY_ANDROID
-        File.Copy(Application.persistentDataPath + "/FreeModeSave/" + name, "/storage/emulated/0/Download");
-#endif
+
     }
 
     private void OnDeleteClicked(string name)
     {
-        File.Delete(Application.persistentDataPath + "/FreeModeSave/" + name);
+        File.Delete(Application.persistentDataPath + "/FreeModeSave/" + name + ".lgt");
         gameObject.GetComponentInParent<ContentSavedView>().UpdateList();
     }
 }

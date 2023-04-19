@@ -17,10 +17,12 @@ public static class SaveLoadSystem
 		}
 		var datapath = Application.persistentDataPath + subFolder + collectionToXml.fileName;
 
+		if (File.Exists(datapath)) File.Delete(datapath);
+
 		Type[] extraTypes = { typeof(BrickXML) };
 		XmlSerializer serializer = new XmlSerializer(typeof(BrickCollectionXML), extraTypes);
 
-		FileStream fs = new FileStream(datapath, FileMode.Create);
+		FileStream fs = new FileStream(datapath, FileMode.CreateNew);
 		serializer.Serialize(fs, collectionToXml);
 		fs.Close();
 
@@ -50,15 +52,15 @@ public class BrickCollectionXML
 
 	[XmlElement("Time")]
 	public DateTime time;
-    private static List<BrickXML> brickXMLs = new List<BrickXML>();
-    [XmlArray("BrickArray")]
+
+	[XmlArray("BrickArray")]
 	[XmlArrayItem("Brick")]
-	public List<BrickXML> BrickArray = brickXMLs;
+	public List<BrickXML> BrickArray = new List<BrickXML>();
 
     public BrickCollectionXML(string fileName)
     {
         this.fileName = fileName;
-        this.time = DateTime.Now;
+        time = DateTime.Now;
     }
 
     public BrickCollectionXML() { }

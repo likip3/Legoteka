@@ -63,6 +63,9 @@ public class FreeModeBrickPlacer : MonoBehaviour
 
     public static void ToSceneFromBrickCol(BrickCollectionXML brickColl)
     {
+        foreach (var brick in GameObject.FindGameObjectsWithTag("BrickOnScene"))
+            Destroy(brick);
+
         foreach (var brick in brickColl.BrickArray)
         {
             var brickGM = Instantiate(SQLiteTasker.BrickDict[brick.brickID]);
