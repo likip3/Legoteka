@@ -33,15 +33,49 @@ public class FreeModeBrickPlacer : MonoBehaviour
             unPress = true;
     }
 
-    public void OnSavePresed() => SaveBrickState("Тестовыя абоба");
-    public void OnLoadPresed() => LoadBrickState("Тестовыя абоба");
+    public void OnSavePresed() => SaveBrickState("Тестовыя абоба", "/FreeModeSave/");
+    public void OnLoadPresed() => LoadBrickState("Тестовыя абоба", "/FreeModeSave/");
 
 
-    public static void SaveBrickState(string name)
+    public void OnSaveLocationPresed() => SaveBrickState("Тестовыя лока абоба", "/CustomLocations/");
+    public void OnLoadLocationPresed() => LoadBrickState("Тестовыя лока абоба", "/CustomLocations/");
+    public void OnFreeModeLoadLocationPresed() => LoadLocationState("Тестовыя лока абоба", "/CustomLocations/");
+
+
+    public static void LoadLocationState(string name, string subFolder)
+    {
+        var brickColl = SaveLoadSystem.DeXml(name, subFolder);
+        ToLocationFromBrickCol(brickColl);
+    }
+
+    private static void ToLocationFromBrickCol(BrickCollectionXML brickColl)
+    {
+        foreach (var brick in GameObject.FindGameObjectsWithTag("LocationBrickOnScene"))
+            Destroy(brick);
+
+        foreach (var brick in brickColl.BrickArray)
+        {
+            var brickGM = Instantiate(SQLiteTasker.BrickDict[brick.brickID]);
+            brickGM.transform.SetPositionAndRotation(brick.position, brick.rotation);
+            //foreach (var col in brickGM.GetComponents<BoxCollider>())
+            //{
+            //    col.enabled = false;
+            //}
+
+            Color color = SQLiteTasker.GetColorById(brick.brickID);
+            brickGM.color = color;
+            brickGM.ID = brick.brickID;
+            brickGM.GetComponent<MeshRenderer>().material.color = color;
+            brickGM.tag = "LocationBrickOnScene";
+        }
+    }
+
+    public static void SaveBrickState(string name, string subFolder)
     {
         BrickCollectionXML brickColl = SceneToBrickCol(name);
-        SaveLoadSystem.SaveXml(brickColl, "/FreeModeSave/");
+        SaveLoadSystem.SaveXml(brickColl, subFolder);
     }
+
 
     public static BrickCollectionXML SceneToBrickCol(string name)
     {
@@ -55,9 +89,9 @@ public class FreeModeBrickPlacer : MonoBehaviour
         return brickColl;
     }
 
-    public static void LoadBrickState(string name)
+    public static void LoadBrickState(string name, string subFolder)
     {
-        var brickColl = SaveLoadSystem.DeXml(name, "/FreeModeSave/");
+        var brickColl = SaveLoadSystem.DeXml(name, subFolder);
         ToSceneFromBrickCol(brickColl);
     }
 

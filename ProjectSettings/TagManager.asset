@@ -30,6 +30,7 @@ TagManager:
   - uiDrag
   - BrickOnScene
   - UIContentItem
+  - LocationBrickOnScene
   layers:
   - Default
   - TransparentFX
