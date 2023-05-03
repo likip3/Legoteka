@@ -89,6 +89,8 @@ public class FreeModeBrickPlacer : MonoBehaviour
         return brickColl;
     }
 
+    public void EnterLocationEditor() => UnityEngine.SceneManagement.SceneManager.LoadScene("LocationEditorMode");
+
     public static void LoadBrickState(string name, string subFolder)
     {
         var brickColl = SaveLoadSystem.DeXml(name, subFolder);
