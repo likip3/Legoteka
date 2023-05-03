@@ -254,6 +254,7 @@ public class BrickDBItem
     {
         brickID = id;
         this.color = color;
+        if (gameObject is null) return;
         this.gameObject = gameObject;
         var brick = this.gameObject.GetComponent<Brick>();
         brick.color = color;
