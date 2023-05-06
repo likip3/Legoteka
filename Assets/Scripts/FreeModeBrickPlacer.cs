@@ -12,17 +12,69 @@ public class FreeModeBrickPlacer : MonoBehaviour
     private GameObject highlightedBrick;
     private bool unPress;
 
+    private static List<Step> instructionSteps;
+    private static int instructionStepIndex;
+
     private Box boxToRender;
     private Color colorBox;
     private bool isBoxRender;
 
     [SerializeField]
     private AudioSource soundSource;
+    private Material ghostMaterial;
 
     private void Awake()
     {
         mainCamera = Camera.main;
+        ghostMaterial = Resources.Load<Material>("GhostMaterial");
     }
+
+    public void StartInstrucrion()
+    {
+        if (instructionSteps.Count < 1) return;
+
+        instructionSteps.Sort(delegate (Step a, Step b)
+        {
+            if (a.pos.y > b.pos.y)
+                return 1;
+            if (a.pos.y < b.pos.y)
+                return -1;
+            else
+                return 0;
+        });
+        instructionStepIndex = -1;
+        NextStepInstrucrion();
+    }
+
+    private void NextStepInstrucrion()
+    {
+        instructionStepIndex++;
+        if (instructionSteps.Count < instructionStepIndex + 1) return;
+
+        var brick = instructionSteps[instructionStepIndex];
+
+        var brickGM = Instantiate(SQLiteTasker.BrickDict[brick.ID]);
+        brickGM.transform.SetPositionAndRotation(brick.pos, brick.rotation);
+
+
+        Color color = SQLiteTasker.GetColorById(brick.ID);
+        brickGM.color = color;
+        color.a = .35f;
+        brickGM.ID = brick.ID;
+        brickGM.tag = "ghostBrick";
+        (brickGM.GetComponent<MeshRenderer>().material = ghostMaterial).color = color;
+    }
+
+    private void CheckStepInstrucrion(Brick brick)
+    {
+        var ghostBrick = instructionSteps[instructionStepIndex];
+        if (ghostBrick.ID != brick.ID || ghostBrick.pos != brick.transform.position)
+            return;
+        Destroy(GameObject.FindGameObjectWithTag("ghostBrick"));
+        PlaceControllableBrick();
+        NextStepInstrucrion();
+    }
+
 
     private void Update()
     {
@@ -94,7 +146,12 @@ public class FreeModeBrickPlacer : MonoBehaviour
     public static void LoadBrickState(string name, string subFolder)
     {
         var brickColl = SaveLoadSystem.DeXml(name, subFolder);
-        ToSceneFromBrickCol(brickColl);
+        instructionSteps = new();
+        foreach (var brick in brickColl.BrickArray)
+        {
+            instructionSteps.Add(new Step(brick.brickID, brick.position, brick.rotation));
+        }
+        //ToSceneFromBrickCol(brickColl);
     }
 
     public static void ToSceneFromBrickCol(BrickCollectionXML brickColl)
@@ -121,7 +178,7 @@ public class FreeModeBrickPlacer : MonoBehaviour
 
     private void FixedUpdate()
     {
-        PlaceCordsForBrick();
+        SetCordsForBrick();
         DeleteRayCast();
     }
 
@@ -167,7 +224,7 @@ public class FreeModeBrickPlacer : MonoBehaviour
 
     }
 
-    private void PlaceCordsForBrick()
+    private void SetCordsForBrick()
     {
         if (controllableBrick == null)
             return;
@@ -227,12 +284,15 @@ public class FreeModeBrickPlacer : MonoBehaviour
 
             if (Physics.CheckBox(new Vector3(x, y, z) - globalPosShift,
                 boxCollider.size / 2 - new Vector3(0.01f, 0.01f, 0.201f),
-                controllableBrick.rotation)) 
+                controllableBrick.rotation))
                 return;
         }
 
-
-        controllableBrick.transform.position = new Vector3(x, y, z);
+        if (controllableBrick.transform.position != new Vector3(x, y, z))
+        {
+            controllableBrick.transform.position = new Vector3(x, y, z);
+            CheckStepInstrucrion(controllableBrick.GetComponent<Brick>());
+        }
     }
 
     public void StartPlacingBrick(Brick buildingPrefab)
@@ -272,10 +332,11 @@ public class FreeModeBrickPlacer : MonoBehaviour
             col.size += new Vector3(0.001f, 0.001f);
         }
         controllableBrick.gameObject.layer = 0;
-        soundSource.pitch = Random.Range(.8f,2.5f);
+        soundSource.pitch = Random.Range(.8f, 2.5f);
         soundSource.transform.position = controllableBrick.position;
         soundSource.Play();
         controllableBrick = null;
+        //CameraControll.movingState = true;
     }
 
     public void RotateBrick()
@@ -287,7 +348,7 @@ public class FreeModeBrickPlacer : MonoBehaviour
     public void Undo()
     {
         if (brickStack.Count != 0)
-        { 
+        {
             var gm = brickStack.Pop().gameObject;
             if (gm == null)
             {
@@ -325,6 +386,8 @@ public class FreeModeBrickPlacer : MonoBehaviour
         CameraControll.movingState = true;
         isDeleteRay = false;
     }
+
+
 
     #region DebugDrawBox
     public static void DrawBox(Vector3 origin, Vector3 halfExtents, Quaternion orientation, Color color)
@@ -412,7 +475,22 @@ public class FreeModeBrickPlacer : MonoBehaviour
         Vector3 direction = point - pivot;
         return pivot + rotation * direction;
     }
+
+
     #endregion
+    private class Step
+    {
+        public Vector3 pos;
+        public Quaternion rotation;
+        public string ID;
+
+        public Step(string ID, Vector3 pos, Quaternion rotation)
+        {
+            this.pos = pos;
+            this.rotation = rotation;
+            this.ID = ID;
+        }
+    }
 
 }
 
