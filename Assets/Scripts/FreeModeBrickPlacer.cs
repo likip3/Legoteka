@@ -14,6 +14,7 @@ public class FreeModeBrickPlacer : MonoBehaviour
 
     private static List<Step> instructionSteps;
     private static int instructionStepIndex;
+    private static bool isInstruction;
 
     private Box boxToRender;
     private Color colorBox;
@@ -31,6 +32,8 @@ public class FreeModeBrickPlacer : MonoBehaviour
 
     public void StartInstrucrion()
     {
+        LoadInstructionFor("Тестовыя абоба", "/FreeModeSave/");
+
         if (instructionSteps.Count < 1) return;
 
         instructionSteps.Sort(delegate (Step a, Step b)
@@ -43,13 +46,18 @@ public class FreeModeBrickPlacer : MonoBehaviour
                 return 0;
         });
         instructionStepIndex = -1;
+        isInstruction = true;
         NextStepInstrucrion();
     }
 
     private void NextStepInstrucrion()
     {
         instructionStepIndex++;
-        if (instructionSteps.Count < instructionStepIndex + 1) return;
+        if (instructionSteps.Count-1 < instructionStepIndex)
+        {
+            isInstruction = false;
+            return;
+        }
 
         var brick = instructionSteps[instructionStepIndex];
 
@@ -67,6 +75,7 @@ public class FreeModeBrickPlacer : MonoBehaviour
 
     private void CheckStepInstrucrion(Brick brick)
     {
+        if (!isInstruction) return;
         var ghostBrick = instructionSteps[instructionStepIndex];
         if (ghostBrick.ID != brick.ID || ghostBrick.pos != brick.transform.position)
             return;
@@ -146,12 +155,17 @@ public class FreeModeBrickPlacer : MonoBehaviour
     public static void LoadBrickState(string name, string subFolder)
     {
         var brickColl = SaveLoadSystem.DeXml(name, subFolder);
+        ToSceneFromBrickCol(brickColl);
+    }
+
+    public static void LoadInstructionFor(string name, string subFolder)
+    {
+        var brickColl = SaveLoadSystem.DeXml(name, subFolder);
         instructionSteps = new();
         foreach (var brick in brickColl.BrickArray)
         {
             instructionSteps.Add(new Step(brick.brickID, brick.position, brick.rotation));
         }
-        //ToSceneFromBrickCol(brickColl);
     }
 
     public static void ToSceneFromBrickCol(BrickCollectionXML brickColl)
