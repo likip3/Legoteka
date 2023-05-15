@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LocationEditorMode.unity
     guid: 19895003af7971a48a180500776a65ad
+  - enabled: 1
+    path: Assets/Scenes/HouseWithHelper.unity
+    guid: 2f926c7cbb5331c47945b79f360e061c
   m_configObjects: {}

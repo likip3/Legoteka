@@ -32,6 +32,19 @@ TagManager:
   - UIContentItem
   - LocationBrickOnScene
   - ghostBrick
+  - bracket_down1x2-2x2reddish_brown
+  - brick1x2medium_azure
+  - brick1x2tan
+  - brick1x4tan
+  - brick2x2medium_azure
+  - brick2x2yellow
+  - brick2x3reddish_brown
+  - brick2x3tan
+  - brick2x4brown
+  - brick2x4tan
+  - brick2x6tan
+  - brick2x8tan
+  - plate_round_with_tabs1x1green
   layers:
   - Default
   - TransparentFX

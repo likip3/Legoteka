@@ -29,6 +29,7 @@ public class UIController : MonoBehaviour
     private Button collapseButton;
     private Button closeButton;
     private VisualElement dragMenu;
+    private ScrollView scrollViewMain;
     private List<VisualElement> extendersToCollapse = new List<VisualElement>();
     private bool isDraging;
 
@@ -45,6 +46,7 @@ public class UIController : MonoBehaviour
         collapseButton = root.Q<Button>("collapse-button");
         closeButton = root.Q<Button>("close-button");
         dragMenu = root.Q<VisualElement>("drag-menu");
+        scrollViewMain = root.Q<ScrollView>("scroll-view-main");
         collapseButton.clicked += CollapseAll;
         closeButton.clicked += CloseMenu;
 
@@ -70,7 +72,7 @@ public class UIController : MonoBehaviour
 
     public void SetDrag(bool drag)
     {
-        this.isDraging = drag;
+        isDraging = drag;
     }
 
 
@@ -105,6 +107,9 @@ public class UIController : MonoBehaviour
 
     private void ButtonSwitch(ListItem item, VisualElement extender)
     {
+        var tempScroll = scrollViewMain.scrollOffset;
+        StartCoroutine(ScrollerAwaiter(tempScroll));
+
         ButtonVisualise(item.Name, item.Tags, item.RenderTexture);
         if (extender.style.width.value.value == 100)
         {
@@ -114,6 +119,12 @@ public class UIController : MonoBehaviour
         }
 
         Extand(item, extender);
+    }
+
+    private System.Collections.IEnumerator ScrollerAwaiter(Vector2 scroll)
+    {
+        yield return new WaitForEndOfFrame();
+        scrollViewMain.scrollOffset = scroll;
     }
 
     private void Extand(ListItem item, VisualElement extender)

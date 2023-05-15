@@ -90,7 +90,7 @@ public class BricksGrid : MonoBehaviour
                         uiObjectWrong.SetActive(true);
                         source.PlayOneShot(wrong);
                         Destroy(flyingBrick.gameObject);
-                        StartCoroutine("Wait");                        
+                        StartCoroutine("Wait");                      
                     }
                         
                 }

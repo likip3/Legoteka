@@ -51,6 +51,11 @@ public class UiControl : MonoBehaviour
         SceneManager.LoadScene("HorseWithHelper");
     }
 
+    public void SceneHouseWithHelper()
+    {
+        SceneManager.LoadScene("HouseWithHelper");
+    }
+
     public void SceneGiraffeWithHelper()
     {
         SceneManager.LoadScene("GiraffeWithHelper");
