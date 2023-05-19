@@ -9,7 +9,7 @@ public class ContentSavedView : MonoBehaviour
 {
     [SerializeField]
     private GameObject itemPrefab;
-    private void Awake() => StartCoroutine(UpdateListCoroutine());
+    private void Awake() => UpdateList();
 
 
     public void UpdateList() => StartCoroutine(UpdateListCoroutine());

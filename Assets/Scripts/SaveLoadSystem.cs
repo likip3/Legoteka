@@ -15,7 +15,7 @@ public static class SaveLoadSystem
         {
 			Directory.CreateDirectory(Application.persistentDataPath + subFolder);
 		}
-		var datapath = Application.persistentDataPath + subFolder + collectionToXml.fileName;
+		var datapath = Application.persistentDataPath + subFolder + collectionToXml.fileName + ".lgt";
 
 		if (File.Exists(datapath)) File.Delete(datapath);
 
@@ -31,11 +31,11 @@ public static class SaveLoadSystem
 	public static BrickCollectionXML DeXml(string name) => DeXml(name, "/");
 	public static BrickCollectionXML DeXml(string name, string subFolder)
 	{
-		if (!File.Exists(Application.persistentDataPath + subFolder + name)) return null;
+		if (!File.Exists(Application.persistentDataPath + subFolder + name + ".lgt")) return null;
 		Type[] extraTypes = { typeof(BrickXML) };
 		XmlSerializer serializer = new XmlSerializer(typeof(BrickCollectionXML), extraTypes);
 
-		FileStream fs = new FileStream(Application.persistentDataPath + subFolder + name, FileMode.Open);
+		FileStream fs = new FileStream(Application.persistentDataPath + subFolder + name + ".lgt", FileMode.Open);
 		BrickCollectionXML collectionFromXml = (BrickCollectionXML)serializer.Deserialize(fs);
 		fs.Close();
 

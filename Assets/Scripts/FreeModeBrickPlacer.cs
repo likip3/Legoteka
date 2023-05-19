@@ -118,10 +118,6 @@ public class FreeModeBrickPlacer : MonoBehaviour
         {
             var brickGM = Instantiate(SQLiteTasker.BrickDict[brick.brickID]);
             brickGM.transform.SetPositionAndRotation(brick.position, brick.rotation);
-            //foreach (var col in brickGM.GetComponents<BoxCollider>())
-            //{
-            //    col.enabled = false;
-            //}
 
             Color color = SQLiteTasker.GetColorById(brick.brickID);
             brickGM.color = color;
