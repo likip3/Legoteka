@@ -61,7 +61,11 @@ public class ObjectPreviewRenderer : MonoBehaviour
         go.transform.localScale = task.scale;
         go.transform.localPosition = task.position;
         go.transform.localRotation = task.rotation;
-        go.transform.GetComponent<MeshRenderer>().material= task.material;
+
+        if (go.transform.TryGetComponent<MeshRenderer>(out var temp))
+        {
+            temp.material = task.material;
+        }
 
         //Set Layer
         SetLayerRecursively(go, gameObject.layer);

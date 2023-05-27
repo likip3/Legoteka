@@ -164,14 +164,16 @@ public class FreeModeBrickPlacer : MonoBehaviour
         }
     }
 
-    public static void ToSceneFromBrickCol(BrickCollectionXML brickColl)
+
+    public static void ToSceneFromBrickCol(BrickCollectionXML brickColl) => ToSceneFromBrickCol(brickColl, null);
+    public static void ToSceneFromBrickCol(BrickCollectionXML brickColl, Transform parent)
     {
         foreach (var brick in GameObject.FindGameObjectsWithTag("BrickOnScene"))
             Destroy(brick);
 
         foreach (var brick in brickColl.BrickArray)
         {
-            var brickGM = Instantiate(SQLiteTasker.BrickDict[brick.brickID]);
+            var brickGM = Instantiate(SQLiteTasker.BrickDict[brick.brickID], parent);
             brickGM.transform.SetPositionAndRotation(brick.position, brick.rotation);
             foreach (var col in brickGM.GetComponents<BoxCollider>())
             {
