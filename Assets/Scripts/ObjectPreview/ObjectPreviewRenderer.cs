@@ -58,11 +58,12 @@ public class ObjectPreviewRenderer : MonoBehaviour
 
         //Create Object and update transform
         GameObject go = Instantiate(task.gameObject, objectHolder, false);
+        go.SetActive(true);
         go.transform.localScale = task.scale;
         go.transform.localPosition = task.position;
         go.transform.localRotation = task.rotation;
 
-        if (go.transform.TryGetComponent<MeshRenderer>(out var temp))
+        if (go.TryGetComponent<MeshRenderer>(out var temp))
         {
             temp.material = task.material;
         }

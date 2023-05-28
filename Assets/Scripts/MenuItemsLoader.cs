@@ -37,7 +37,7 @@ public class MenuItemsLoader : MonoBehaviour
 
 
 
-            customMainMenuItems.Add(new MainMenuItem(brickColl.fileName, CreateSetPreview(brickColl), new Color(1,0,0), "FreeMode"));
+            customMainMenuItems.Add(new MainMenuItem(brickColl.fileName, CreateSetPreview(brickColl), Color.Lerp(SQLiteTasker.GetColorById(brickColl.BrickArray[0].brickID), SQLiteTasker.GetColorById(brickColl.BrickArray[1].brickID),.4f), "FreeMode"));
         }
 
 
@@ -47,6 +47,8 @@ public class MenuItemsLoader : MonoBehaviour
     public static RenderTexture CreateSetPreview(BrickCollectionXML brickColl)
     {
         var tempTransform = new GameObject("temp");
+        tempTransform.transform.position = new Vector3(4.5f,.4f,30.5f);
+        tempTransform.SetActive(false);
         FreeModeBrickPlacer.ToSceneFromBrickCol(brickColl, tempTransform.transform);
         var render = BrickDatabase.CreatePreviewRender(tempTransform, new Color());
         return render;

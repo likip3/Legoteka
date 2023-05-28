@@ -48,7 +48,11 @@ public struct RenderTask
         this.position = position;
         this.rotation = rotation;
         this.scale = Vector3.one;
-        this.material = gameObject.GetComponent<MeshRenderer>().material;
+        this.material = null;
+        if (gameObject.TryGetComponent<MeshRenderer>(out var temp))
+        {
+            this.material = temp.material;
+        }
     }
 
     /// <summary>
