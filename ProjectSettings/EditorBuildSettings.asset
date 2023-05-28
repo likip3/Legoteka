@@ -44,4 +44,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HouseWithHelper.unity
     guid: 2f926c7cbb5331c47945b79f360e061c
+  - enabled: 1
+    path: Assets/Scenes/ChooseHorse.unity
+    guid: daf256af46d3b96448fbc5890dc4098c
+  - enabled: 1
+    path: Assets/Scenes/ChooseHouse.unity
+    guid: e8b0f43447b134f479578e303426da2c
+  - enabled: 1
+    path: Assets/Scenes/ChooseGiraffe.unity
+    guid: eb14b1f90eeebc14297702d2e9b7baa0
   m_configObjects: {}

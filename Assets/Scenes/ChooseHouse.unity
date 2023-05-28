@@ -834,10 +834,10 @@ RectTransform:
   m_Father: {fileID: 2005620386}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.46300003, y: 0.48900002}
+  m_AnchorMin: {x: 0.46343753, y: 0.48800004}
   m_AnchorMax: {x: 0.70279175, y: 0.624}
-  m_AnchoredPosition: {x: -0.19995117, y: 0}
-  m_SizeDelta: {x: -2, y: -0.19999695}
+  m_AnchoredPosition: {x: 0.30004883, y: 0.5}
+  m_SizeDelta: {x: -1, y: -1.199997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &491909050
 MonoBehaviour:
@@ -1641,10 +1641,10 @@ RectTransform:
   m_Father: {fileID: 2005620386}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.72914565, y: 0.48900002}
-  m_AnchorMax: {x: 0.97058344, y: 0.625}
-  m_AnchoredPosition: {x: 0.20007324, y: -0.5000458}
-  m_SizeDelta: {x: -2, y: 0.80000305}
+  m_AnchorMin: {x: 0.7301873, y: 0.48800004}
+  m_AnchorMax: {x: 0.97058344, y: 0.624}
+  m_AnchoredPosition: {x: 0.20007324, y: 0.49995422}
+  m_SizeDelta: {x: 0, y: 0.80000305}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &964345783
 MonoBehaviour:
@@ -2836,10 +2836,10 @@ RectTransform:
   m_Father: {fileID: 2005620386}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.46300003, y: 0.2594362}
+  m_AnchorMin: {x: 0.46343753, y: 0.2594362}
   m_AnchorMax: {x: 0.97058344, y: 0.3946123}
-  m_AnchoredPosition: {x: -0.5, y: 0.10003662}
-  m_SizeDelta: {x: -0.5, y: 0.80000305}
+  m_AnchoredPosition: {x: 0, y: 0.10003662}
+  m_SizeDelta: {x: 0.5, y: 0.80000305}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1259230956
 MonoBehaviour:
@@ -2887,7 +2887,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1602098277}
         m_TargetAssemblyTypeName: UiControl, Assembly-CSharp
-        m_MethodName: CrocodileWithHelper
+        m_MethodName: SceneHouseWithHelper
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2980,10 +2980,10 @@ RectTransform:
   m_Father: {fileID: 2005620386}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.45700002, y: 0.6572908}
-  m_AnchorMax: {x: 0.97900003, y: 0.82100004}
-  m_AnchoredPosition: {x: 0.2999878, y: 0}
-  m_SizeDelta: {x: -1.8499756, y: 0}
+  m_AnchorMin: {x: 0.45774996, y: 0.6572908}
+  m_AnchorMax: {x: 0.9794792, y: 0.82100004}
+  m_AnchoredPosition: {x: -0.2000122, y: 0}
+  m_SizeDelta: {x: -0.8499756, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1283819663
 MonoBehaviour:
@@ -3565,8 +3565,8 @@ MonoBehaviour:
   withHelperButton: {fileID: 491909050}
   withoutHelperButton: {fileID: 964345783}
   startButton: {fileID: 1259230956}
-  withHelperSceneName: CrocodileWithHelper
-  withoutHelperSceneName: CrocodileNoHelper
+  withHelperSceneName: HouseWithHelper
+  withoutHelperSceneName: HouseWithHelper
   selectedWithHelperSprite: {fileID: 21300000, guid: e879fd6fd6b63a04d9a7fa6868380584,
     type: 3}
   selectedWithoutHelperSprite: {fileID: 21300000, guid: bda254566fd0cf44bbb1b70d851bf1d8,
@@ -4014,10 +4014,10 @@ RectTransform:
   m_Father: {fileID: 2005620386}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.034, y: 0.032351144}
-  m_AnchorMax: {x: 0.441, y: 0.77500004}
+  m_AnchorMin: {x: 0.035, y: 0.032351144}
+  m_AnchorMax: {x: 0.441, y: 0.7745186}
   m_AnchoredPosition: {x: -0.5, y: -0.000030517578}
-  m_SizeDelta: {x: -1, y: 0}
+  m_SizeDelta: {x: 1, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1940573282
 MonoBehaviour:
@@ -4039,7 +4039,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e56b7d4ff18be884885068332fa1e967, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 093ca89cc21dc9d42ae7e9bac6314f61, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4279,10 +4279,10 @@ RectTransform:
   m_Father: {fileID: 2005620386}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.46300003, y: 0.032351144}
+  m_AnchorMin: {x: 0.46343753, y: 0.03130268}
   m_AnchorMax: {x: 0.97058344, y: 0.16600001}
-  m_AnchoredPosition: {x: 0.5, y: -0.5}
-  m_SizeDelta: {x: -0.5, y: 1.7999878}
+  m_AnchoredPosition: {x: 1, y: 0}
+  m_SizeDelta: {x: 0.5, y: 0.7999878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2012161880
 MonoBehaviour:
@@ -4327,19 +4327,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2012161881}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1602098277}
-        m_TargetAssemblyTypeName: UiControl, Assembly-CSharp
-        m_MethodName: InstructionCrocodile
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2012161881
 MonoBehaviour:
   m_ObjectHideFlags: 0
