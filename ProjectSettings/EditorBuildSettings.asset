@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Settings.unity
     guid: 80d0caafd6d8c034080556e6d2b5ccdb
   - enabled: 1
-    path: Assets/Scenes/ChooseGiraffe.unity
+    path: Assets/Scenes/CustomModeParamChoice.unity
     guid: eabda9ca3c7022c4abd471f130db03c2
   - enabled: 1
     path: Assets/Scenes/GiraffeNoHelper.unity

@@ -37,7 +37,7 @@ public class MenuItemsLoader : MonoBehaviour
 
 
 
-            customMainMenuItems.Add(new MainMenuItem(brickColl.fileName, CreateSetPreview(brickColl), Color.Lerp(SQLiteTasker.GetColorById(brickColl.BrickArray[0].brickID), SQLiteTasker.GetColorById(brickColl.BrickArray[1].brickID),.4f), "FreeMode"));
+            customMainMenuItems.Add(new MainMenuItem(brickColl.fileName, CreateSetPreview(brickColl), Color.Lerp(SQLiteTasker.GetColorById(brickColl.BrickArray[0].brickID), SQLiteTasker.GetColorById(brickColl.BrickArray[1].brickID),.4f)));
         }
 
 
@@ -53,8 +53,8 @@ public class MenuItemsLoader : MonoBehaviour
         var render = BrickDatabase.CreatePreviewRender(tempTransform, new Color());
         return render;
     }
-
-    private void LoadItemsFromCol(List<MainMenuItem> menuItems)
+    private void LoadItemsFromCol(List<MainMenuItem> menuItems) => LoadItemsFromCol(menuItems, false);
+    private void LoadItemsFromCol(List<MainMenuItem> menuItems, bool loadCustomData)
     {
         foreach (var item in menuItems)
         {
@@ -65,7 +65,19 @@ public class MenuItemsLoader : MonoBehaviour
             curPos += 856;
 
             tempInst.GetComponent<Image>().color = item.Background;
-            tempInst.GetComponent<Button>().onClick.AddListener(delegate { SceneManager.LoadScene(item.SceneName); });
+
+            if (loadCustomData)
+            {
+                tempInst.GetComponent<Button>().onClick.AddListener(delegate {
+                    SetLoaderStatic.enabled = true;
+                    SetLoaderStatic.setName = item.customSetName;
+                    SetLoaderStatic.middleColor = item.Background;
+
+                    SceneManager.LoadScene("CustomModeParamChoice"); 
+                });
+            }
+            else
+                tempInst.GetComponent<Button>().onClick.AddListener(delegate { SceneManager.LoadScene(item.SceneName); });
 
 
             tempInst.transform.GetChild(0).gameObject.SetActive(false);
@@ -97,6 +109,7 @@ public class MenuItemsLoader : MonoBehaviour
         [SerializeField] private string sceneName;
         [SerializeField] private Color backgroundColor;
         [SerializeField] private string instructionLink;
+        public string customSetName;
 
         public string Name => name;
         public Sprite Image => image;
@@ -119,6 +132,15 @@ public class MenuItemsLoader : MonoBehaviour
             this.renderTexture = render;
             backgroundColor = background;
             this.sceneName = sceneName;
+            instructionLink = null;
+        }
+
+        public MainMenuItem(string name, RenderTexture render, Color background)
+        {
+            this.name = name;
+            this.renderTexture = render;
+            backgroundColor = background;
+            this.customSetName = name;
             instructionLink = null;
         }
     }

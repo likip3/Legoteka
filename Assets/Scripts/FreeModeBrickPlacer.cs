@@ -28,6 +28,20 @@ public class FreeModeBrickPlacer : MonoBehaviour
     {
         mainCamera = Camera.main;
         ghostMaterial = Resources.Load<Material>("GhostMaterial");
+        TryLoadSet();
+    }
+
+    private void TryLoadSet()
+    {
+        if (!SetLoaderStatic.enabled) return;
+
+        if (SetLoaderStatic.instructionMode)
+            LoadInstructionFor(SetLoaderStatic.setName, "/CustomStory/");
+
+        //нужно отображать только брики из набора
+
+
+        SetLoaderStatic.enabled = false;
     }
 
     public void StartInstrucrion()
