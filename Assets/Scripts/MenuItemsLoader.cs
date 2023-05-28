@@ -41,7 +41,7 @@ public class MenuItemsLoader : MonoBehaviour
         }
 
 
-        LoadItemsFromCol(customMainMenuItems);
+        LoadItemsFromCol(customMainMenuItems, true);
     }
 
     public static RenderTexture CreateSetPreview(BrickCollectionXML brickColl)
@@ -50,7 +50,7 @@ public class MenuItemsLoader : MonoBehaviour
         tempTransform.transform.position = new Vector3(4.5f,.4f,30.5f);
         tempTransform.SetActive(false);
         FreeModeBrickPlacer.ToSceneFromBrickCol(brickColl, tempTransform.transform);
-        var render = BrickDatabase.CreatePreviewRender(tempTransform, new Color());
+        var render = BrickDatabase.NewCreatePreviewRender(tempTransform, new Color());
         return render;
     }
     private void LoadItemsFromCol(List<MainMenuItem> menuItems) => LoadItemsFromCol(menuItems, false);
@@ -72,6 +72,7 @@ public class MenuItemsLoader : MonoBehaviour
                     SetLoaderStatic.enabled = true;
                     SetLoaderStatic.setName = item.customSetName;
                     SetLoaderStatic.middleColor = item.Background;
+                    SetLoaderStatic.preview = item.renderTexture;
 
                     SceneManager.LoadScene("CustomModeParamChoice"); 
                 });

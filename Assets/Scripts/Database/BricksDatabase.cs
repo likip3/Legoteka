@@ -88,10 +88,20 @@ public static class BrickDatabase
 
     public static RenderTexture CreatePreviewRender(GameObject gameObject, Color color)
     {
+        var renderTexture = new RenderTexture(renderResolution, renderResolution, 16);
+        var material = new Material(defaultMaterial);
+        material.color = color;
+        var renderTask = new RenderTask(renderTexture, gameObject, material);
+        ObjectPreviewRenderer.current.RenderPreview(renderTask);
+        return renderTexture;
+    }
+
+    public static RenderTexture NewCreatePreviewRender(GameObject gameObject, Color color)
+    {
         var renderTexture = new RenderTexture(580, 550, 16);
         var material = new Material(defaultMaterial);
-        material.color =  color;
-        var renderTask = new RenderTask(renderTexture, gameObject,new Vector3(),Quaternion.Euler(0,45,0));
+        material.color = color;
+        var renderTask = new RenderTask(renderTexture, gameObject, new Vector3(), Quaternion.Euler(0, 45, 0));
         ObjectPreviewRenderer.current.RenderPreview(renderTask);
         return renderTexture;
     }

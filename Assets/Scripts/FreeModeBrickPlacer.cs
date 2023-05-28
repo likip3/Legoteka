@@ -36,7 +36,10 @@ public class FreeModeBrickPlacer : MonoBehaviour
         if (!SetLoaderStatic.enabled) return;
 
         if (SetLoaderStatic.instructionMode)
+        {
             LoadInstructionFor(SetLoaderStatic.setName, "/CustomStory/");
+            StartInstrucrion();
+        }
 
         //нужно отображать только брики из набора
 
@@ -46,7 +49,6 @@ public class FreeModeBrickPlacer : MonoBehaviour
 
     public void StartInstrucrion()
     {
-        LoadInstructionFor("Тестовыя абоба", "/FreeModeSave/");
 
         if (instructionSteps.Count < 1) return;
 
