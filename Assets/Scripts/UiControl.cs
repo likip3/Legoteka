@@ -101,5 +101,7 @@ public class UiControl : MonoBehaviour
         Application.OpenURL("https://drive.google.com/file/d/1-TukMFR6-tnhCTYNOr8u9TuBdhVO8nd_/view?usp=sharing");
     }
 
-    
+    public void InstructionHouse() => Application.OpenURL("https://drive.google.com/file/d/1dglGGsCILyqaUm16NE9iCxc9aYVbRNRZ/view?usp=sharing");
+
+
 }
