@@ -285,9 +285,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 40401377}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 152594657}
@@ -296,7 +296,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 308.5, y: -462.49997}
+  m_AnchoredPosition: {x: 308.5, y: -588.5}
   m_SizeDelta: {x: 474.5, y: 51.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &40401379
@@ -311,8 +311,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dae92b6b6ac80b447b15e4baa0997cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 1fa6106fa568e994dbb3952ce56cf5ab, type: 3}
-  playButton: {fileID: 40401380}
+  audioClips: []
+  playButtons: []
+  buttonTexts: []
+  initialSprite: {fileID: 0}
+  selectedSprite: {fileID: 0}
   audioSource: {fileID: 897932618}
 --- !u!114 &40401380
 MonoBehaviour:
@@ -378,8 +381,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 99579fd2e8c9fe84482e62a6f05f3f75, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -480,7 +483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -540,8 +543,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 2.115001}
+  m_SizeDelta: {x: 0, y: 4.229998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &79779611
 MonoBehaviour:
@@ -556,7 +559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -564,12 +567,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_Font: {fileID: 12800000, guid: 31de2297abee95843996c918ecab7457, type: 3}
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 70
+    m_MinSize: 0
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -623,7 +626,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 308.5, y: -586.1}
+  m_AnchoredPosition: {x: 308.5, y: -748.1}
   m_SizeDelta: {x: 474.5, y: 51.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &115454811
@@ -638,8 +641,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dae92b6b6ac80b447b15e4baa0997cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 58a7f23a9725fe945a615cad55390593, type: 3}
-  playButton: {fileID: 115454812}
+  audioClips: []
+  playButtons: []
+  buttonTexts: []
+  initialSprite: {fileID: 0}
+  selectedSprite: {fileID: 0}
   audioSource: {fileID: 897932618}
 --- !u!114 &115454812
 MonoBehaviour:
@@ -705,8 +711,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 99579fd2e8c9fe84482e62a6f05f3f75, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -891,8 +897,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 2.115001}
+  m_SizeDelta: {x: 0, y: 4.229998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &152594658
 MonoBehaviour:
@@ -907,7 +913,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -915,12 +921,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_Font: {fileID: 12800000, guid: 31de2297abee95843996c918ecab7457, type: 3}
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 70
+    m_MinSize: 0
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1237,7 +1243,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 308.5, y: -771.49994}
+  m_AnchoredPosition: {x: 308.5, y: -987.49994}
   m_SizeDelta: {x: 474.5, y: 51.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &229203125
@@ -1252,8 +1258,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dae92b6b6ac80b447b15e4baa0997cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: c8a11ae2f55b39943896609fcc0dc378, type: 3}
-  playButton: {fileID: 229203126}
+  audioClips: []
+  playButtons: []
+  buttonTexts: []
+  initialSprite: {fileID: 0}
+  selectedSprite: {fileID: 0}
   audioSource: {fileID: 897932618}
 --- !u!114 &229203126
 MonoBehaviour:
@@ -1319,8 +1328,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 99579fd2e8c9fe84482e62a6f05f3f75, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1466,9 +1475,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
+  m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
+  m_ScaleFactor: 3.7
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
@@ -1826,7 +1835,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 308.5, y: -647.89996}
+  m_AnchoredPosition: {x: 308.5, y: -827.89996}
   m_SizeDelta: {x: 474.5, y: 51.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &393055756
@@ -1841,8 +1850,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dae92b6b6ac80b447b15e4baa0997cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 29f85f8906fcf7c49b0167b7e6e1f34a, type: 3}
-  playButton: {fileID: 393055757}
+  audioClips: []
+  playButtons: []
+  buttonTexts: []
+  initialSprite: {fileID: 0}
+  selectedSprite: {fileID: 0}
   audioSource: {fileID: 897932618}
 --- !u!114 &393055757
 MonoBehaviour:
@@ -1908,8 +1920,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 99579fd2e8c9fe84482e62a6f05f3f75, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2099,7 +2111,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -17, y: 0}
+  m_SizeDelta: {x: -7.0024414, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &451526672
 MonoBehaviour:
@@ -2179,9 +2191,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 492994020}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1711579889}
@@ -2190,7 +2202,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 308.5, y: -524.3}
+  m_AnchoredPosition: {x: 308.5, y: -668.3}
   m_SizeDelta: {x: 474.5, y: 51.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &492994022
@@ -2205,8 +2217,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dae92b6b6ac80b447b15e4baa0997cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 7b0169b807e6a22489f78ff383a56a66, type: 3}
-  playButton: {fileID: 492994023}
+  audioClips: []
+  playButtons: []
+  buttonTexts: []
+  initialSprite: {fileID: 0}
+  selectedSprite: {fileID: 0}
   audioSource: {fileID: 897932618}
 --- !u!114 &492994023
 MonoBehaviour:
@@ -2272,8 +2287,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 99579fd2e8c9fe84482e62a6f05f3f75, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2325,8 +2340,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 2.115001}
+  m_SizeDelta: {x: 0, y: 4.229998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &512479688
 MonoBehaviour:
@@ -2341,7 +2356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2349,12 +2364,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_Font: {fileID: 12800000, guid: 31de2297abee95843996c918ecab7457, type: 3}
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 70
+    m_MinSize: 0
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -2550,8 +2565,8 @@ RectTransform:
   m_Father: {fileID: 785841480}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.67251647}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0.7881173}
+  m_AnchorMax: {x: 1, y: 0.99999815}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2693,9 +2708,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 712326606}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 715767385}
@@ -2704,7 +2719,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 308.5, y: -91.700005}
+  m_AnchoredPosition: {x: 308.5, y: -109.700005}
   m_SizeDelta: {x: 474.5, y: 51.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &712326608
@@ -2719,8 +2734,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dae92b6b6ac80b447b15e4baa0997cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 796994987bb1d5247a9f8bbaf69b2220, type: 3}
-  playButton: {fileID: 712326609}
+  audioClips: []
+  playButtons: []
+  buttonTexts: []
+  initialSprite: {fileID: 0}
+  selectedSprite: {fileID: 0}
   audioSource: {fileID: 897932618}
 --- !u!114 &712326609
 MonoBehaviour:
@@ -2786,8 +2804,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 99579fd2e8c9fe84482e62a6f05f3f75, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2839,8 +2857,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 2.115001}
+  m_SizeDelta: {x: 0, y: 4.229998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &715767386
 MonoBehaviour:
@@ -2855,7 +2873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2863,12 +2881,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_Font: {fileID: 12800000, guid: 31de2297abee95843996c918ecab7457, type: 3}
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 70
+    m_MinSize: 0
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -3062,8 +3080,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 2.115001}
+  m_SizeDelta: {x: 0, y: 4.229998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &783140700
 MonoBehaviour:
@@ -3078,7 +3096,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3086,12 +3104,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_Font: {fileID: 12800000, guid: 31de2297abee95843996c918ecab7457, type: 3}
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 70
+    m_MinSize: 0
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -3182,7 +3200,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 308.5, y: -895.0999}
+  m_AnchoredPosition: {x: 308.5, y: -1147.1}
   m_SizeDelta: {x: 474.5, y: 51.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &817310426
@@ -3197,8 +3215,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dae92b6b6ac80b447b15e4baa0997cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 01fdd9af6c1371941b11369f9ad4b67b, type: 3}
-  playButton: {fileID: 817310427}
+  audioClips: []
+  playButtons: []
+  buttonTexts: []
+  initialSprite: {fileID: 0}
+  selectedSprite: {fileID: 0}
   audioSource: {fileID: 897932618}
 --- !u!114 &817310427
 MonoBehaviour:
@@ -3264,8 +3285,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 99579fd2e8c9fe84482e62a6f05f3f75, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3344,7 +3365,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: fbb1f09d8cdd7d74a90d5d02ced28ba9, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a11778d34bda7144288d1d0c1f1363ee, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
@@ -3696,8 +3717,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 2.115001}
+  m_SizeDelta: {x: 0, y: 4.229998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &983467582
 MonoBehaviour:
@@ -3712,7 +3733,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3720,12 +3741,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_Font: {fileID: 12800000, guid: 31de2297abee95843996c918ecab7457, type: 3}
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 70
+    m_MinSize: 0
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -4059,8 +4080,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 2.115001}
+  m_SizeDelta: {x: 0, y: 4.229998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1055649778
 MonoBehaviour:
@@ -4075,7 +4096,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4083,12 +4104,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_Font: {fileID: 12800000, guid: 31de2297abee95843996c918ecab7457, type: 3}
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 70
+    m_MinSize: 0
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -4273,8 +4294,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 2.115001}
+  m_SizeDelta: {x: 0, y: 4.229998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1102600320
 MonoBehaviour:
@@ -4289,7 +4310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4297,12 +4318,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_Font: {fileID: 12800000, guid: 31de2297abee95843996c918ecab7457, type: 3}
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 70
+    m_MinSize: 0
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -4463,6 +4484,7 @@ GameObject:
   - component: {fileID: 1150446566}
   - component: {fileID: 1150446568}
   - component: {fileID: 1150446567}
+  - component: {fileID: 1150446569}
   m_Layer: 5
   m_Name: MusicPanel
   m_TagString: Untagged
@@ -4486,10 +4508,10 @@ RectTransform:
   m_Father: {fileID: 255380115}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -27.8}
-  m_SizeDelta: {x: -293.40002, y: -106.799995}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -27.796875}
+  m_SizeDelta: {x: 799.5, y: 283.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1150446567
 MonoBehaviour:
@@ -4504,7 +4526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4529,6 +4551,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1150446565}
   m_CullTransparentMesh: 1
+--- !u!114 &1150446569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150446565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dae92b6b6ac80b447b15e4baa0997cb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: a11778d34bda7144288d1d0c1f1363ee, type: 3}
+  - {fileID: 8300000, guid: 796994987bb1d5247a9f8bbaf69b2220, type: 3}
+  - {fileID: 8300000, guid: 982d67c098563d8448e9a17dfaffefb3, type: 3}
+  - {fileID: 8300000, guid: 21f30dcb30f5ac5489ba0ccd00517a48, type: 3}
+  - {fileID: 8300000, guid: b35dde6a1055b3440bddec0d5273dbb2, type: 3}
+  - {fileID: 8300000, guid: be619a426e301f14d81a6e3533cca5ec, type: 3}
+  - {fileID: 8300000, guid: 54308bf17307789408e74d3ce923d346, type: 3}
+  - {fileID: 8300000, guid: 1fa6106fa568e994dbb3952ce56cf5ab, type: 3}
+  - {fileID: 8300000, guid: 7b0169b807e6a22489f78ff383a56a66, type: 3}
+  - {fileID: 8300000, guid: 58a7f23a9725fe945a615cad55390593, type: 3}
+  - {fileID: 8300000, guid: 29f85f8906fcf7c49b0167b7e6e1f34a, type: 3}
+  - {fileID: 8300000, guid: 7cd71855a28e6634ca57f51cb2725c1b, type: 3}
+  - {fileID: 8300000, guid: c8a11ae2f55b39943896609fcc0dc378, type: 3}
+  - {fileID: 8300000, guid: 2f6413b1f24eabd47a1c57d19eb07a29, type: 3}
+  - {fileID: 8300000, guid: 01fdd9af6c1371941b11369f9ad4b67b, type: 3}
+  - {fileID: 8300000, guid: e2d733c1f1200d94b9d917f2228736ad, type: 3}
+  - {fileID: 8300000, guid: 9a1b2c3d5207de94e85ab9934f89c2ca, type: 3}
+  playButtons:
+  - {fileID: 1197476739}
+  - {fileID: 712326609}
+  - {fileID: 1272732863}
+  - {fileID: 1623986716}
+  - {fileID: 1267057212}
+  - {fileID: 2066000810}
+  - {fileID: 1337688307}
+  - {fileID: 40401380}
+  - {fileID: 492994023}
+  - {fileID: 115454812}
+  - {fileID: 393055757}
+  - {fileID: 1586618680}
+  - {fileID: 229203126}
+  - {fileID: 1700049358}
+  - {fileID: 817310427}
+  - {fileID: 2109681190}
+  - {fileID: 1420271612}
+  buttonTexts:
+  - {fileID: 1789044943}
+  - {fileID: 715767386}
+  - {fileID: 783140700}
+  - {fileID: 1055649778}
+  - {fileID: 983467582}
+  - {fileID: 1239916440}
+  - {fileID: 1102600320}
+  - {fileID: 152594658}
+  - {fileID: 1711579890}
+  - {fileID: 1462266050}
+  - {fileID: 1357257827}
+  - {fileID: 512479688}
+  - {fileID: 79779611}
+  - {fileID: 1637762543}
+  - {fileID: 1485254248}
+  - {fileID: 1567719732}
+  - {fileID: 1435370098}
+  initialSprite: {fileID: 21300000, guid: 99579fd2e8c9fe84482e62a6f05f3f75, type: 3}
+  selectedSprite: {fileID: 21300000, guid: 8eb29e32dffac78409473d56f76daf28, type: 3}
+  audioSource: {fileID: 897932618}
 --- !u!1 &1197476736
 GameObject:
   m_ObjectHideFlags: 0
@@ -4582,8 +4673,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dae92b6b6ac80b447b15e4baa0997cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: a11778d34bda7144288d1d0c1f1363ee, type: 3}
-  playButton: {fileID: 1197476739}
+  audioClips: []
+  playButtons: []
+  buttonTexts: []
+  initialSprite: {fileID: 0}
+  selectedSprite: {fileID: 0}
   audioSource: {fileID: 897932618}
 --- !u!114 &1197476739
 MonoBehaviour:
@@ -4649,8 +4743,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 99579fd2e8c9fe84482e62a6f05f3f75, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4938,8 +5032,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 2.115001}
+  m_SizeDelta: {x: 0, y: 4.229998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1239916440
 MonoBehaviour:
@@ -4954,7 +5048,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4962,12 +5056,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_Font: {fileID: 12800000, guid: 31de2297abee95843996c918ecab7457, type: 3}
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 70
+    m_MinSize: 0
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -5010,9 +5104,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1267057209}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 983467581}
@@ -5021,7 +5115,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 308.5, y: -277.1}
+  m_AnchoredPosition: {x: 308.5, y: -349.1}
   m_SizeDelta: {x: 474.5, y: 51.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1267057211
@@ -5036,8 +5130,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dae92b6b6ac80b447b15e4baa0997cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: b35dde6a1055b3440bddec0d5273dbb2, type: 3}
-  playButton: {fileID: 1267057212}
+  audioClips: []
+  playButtons: []
+  buttonTexts: []
+  initialSprite: {fileID: 0}
+  selectedSprite: {fileID: 0}
   audioSource: {fileID: 897932618}
 --- !u!114 &1267057212
 MonoBehaviour:
@@ -5103,8 +5200,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 99579fd2e8c9fe84482e62a6f05f3f75, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5148,9 +5245,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1272732860}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 783140699}
@@ -5159,7 +5256,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 308.5, y: -153.5}
+  m_AnchoredPosition: {x: 308.5, y: -189.5}
   m_SizeDelta: {x: 474.5, y: 51.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1272732862
@@ -5174,8 +5271,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dae92b6b6ac80b447b15e4baa0997cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 982d67c098563d8448e9a17dfaffefb3, type: 3}
-  playButton: {fileID: 1272732863}
+  audioClips: []
+  playButtons: []
+  buttonTexts: []
+  initialSprite: {fileID: 0}
+  selectedSprite: {fileID: 0}
   audioSource: {fileID: 897932618}
 --- !u!114 &1272732863
 MonoBehaviour:
@@ -5241,8 +5341,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 99579fd2e8c9fe84482e62a6f05f3f75, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5420,9 +5520,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1337688304}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1102600319}
@@ -5431,7 +5531,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 308.5, y: -400.69998}
+  m_AnchoredPosition: {x: 308.5, y: -508.69998}
   m_SizeDelta: {x: 474.5, y: 51.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1337688306
@@ -5446,8 +5546,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dae92b6b6ac80b447b15e4baa0997cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 54308bf17307789408e74d3ce923d346, type: 3}
-  playButton: {fileID: 1337688307}
+  audioClips: []
+  playButtons: []
+  buttonTexts: []
+  initialSprite: {fileID: 0}
+  selectedSprite: {fileID: 0}
   audioSource: {fileID: 897932618}
 --- !u!114 &1337688307
 MonoBehaviour:
@@ -5513,8 +5616,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 99579fd2e8c9fe84482e62a6f05f3f75, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5566,8 +5669,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 2.115001}
+  m_SizeDelta: {x: 0, y: 4.229998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1357257827
 MonoBehaviour:
@@ -5582,7 +5685,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5590,12 +5693,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_Font: {fileID: 12800000, guid: 31de2297abee95843996c918ecab7457, type: 3}
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 70
+    m_MinSize: 0
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -5783,7 +5886,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 308.5, y: -1018.6999}
+  m_AnchoredPosition: {x: 308.5, y: -1306.7001}
   m_SizeDelta: {x: 474.5, y: 51.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1420271611
@@ -5798,8 +5901,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dae92b6b6ac80b447b15e4baa0997cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 9a1b2c3d5207de94e85ab9934f89c2ca, type: 3}
-  playButton: {fileID: 1420271612}
+  audioClips: []
+  playButtons: []
+  buttonTexts: []
+  initialSprite: {fileID: 0}
+  selectedSprite: {fileID: 0}
   audioSource: {fileID: 897932618}
 --- !u!114 &1420271612
 MonoBehaviour:
@@ -5865,8 +5971,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 99579fd2e8c9fe84482e62a6f05f3f75, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5918,8 +6024,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 2.115001}
+  m_SizeDelta: {x: 0, y: 4.229998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1435370098
 MonoBehaviour:
@@ -5934,7 +6040,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5942,12 +6048,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_Font: {fileID: 12800000, guid: 31de2297abee95843996c918ecab7457, type: 3}
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 70
+    m_MinSize: 0
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -6016,7 +6122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.22352941, g: 0.5411765, b: 0.7529412, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6076,8 +6182,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 2.115001}
+  m_SizeDelta: {x: 0, y: 4.229998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1462266050
 MonoBehaviour:
@@ -6092,7 +6198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6100,12 +6206,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_Font: {fileID: 12800000, guid: 31de2297abee95843996c918ecab7457, type: 3}
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 70
+    m_MinSize: 0
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -6358,8 +6464,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 2.115001}
+  m_SizeDelta: {x: 0, y: 4.229998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1485254248
 MonoBehaviour:
@@ -6374,7 +6480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6382,12 +6488,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_Font: {fileID: 12800000, guid: 31de2297abee95843996c918ecab7457, type: 3}
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 70
+    m_MinSize: 0
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -6438,10 +6544,10 @@ RectTransform:
   m_Father: {fileID: 65621012}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.8374891, y: 0}
+  m_AnchorMax: {x: 0.85, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1524879731
 MonoBehaviour:
@@ -6486,8 +6592,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 578825616}
   m_HandleRect: {fileID: 578825615}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.32748356
+  m_Value: 0.9999977
+  m_Size: 0.21188086
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6505,7 +6611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.09803922, g: 0.34509805, b: 0.50980395, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6565,8 +6671,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 2.115001}
+  m_SizeDelta: {x: 0, y: 4.229998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1567719732
 MonoBehaviour:
@@ -6581,7 +6687,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6589,12 +6695,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_Font: {fileID: 12800000, guid: 31de2297abee95843996c918ecab7457, type: 3}
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 70
+    m_MinSize: 0
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -6662,8 +6768,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 611, y: 1048.5999}
+  m_AnchoredPosition: {x: 0, y: 0.0023909525}
+  m_SizeDelta: {x: 611, y: 1336.6001}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1581644528
 MonoBehaviour:
@@ -6697,7 +6803,7 @@ MonoBehaviour:
     m_Top: 4
     m_Bottom: 4
   m_ChildAlignment: 1
-  m_Spacing: 10
+  m_Spacing: 28
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
@@ -6743,7 +6849,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 308.5, y: -709.69995}
+  m_AnchoredPosition: {x: 308.5, y: -907.69995}
   m_SizeDelta: {x: 474.5, y: 51.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1586618679
@@ -6758,8 +6864,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dae92b6b6ac80b447b15e4baa0997cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 7cd71855a28e6634ca57f51cb2725c1b, type: 3}
-  playButton: {fileID: 1586618680}
+  audioClips: []
+  playButtons: []
+  buttonTexts: []
+  initialSprite: {fileID: 0}
+  selectedSprite: {fileID: 0}
   audioSource: {fileID: 897932618}
 --- !u!114 &1586618680
 MonoBehaviour:
@@ -6825,8 +6934,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 99579fd2e8c9fe84482e62a6f05f3f75, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -6876,10 +6985,10 @@ RectTransform:
   m_Father: {fileID: 1457693110}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -130}
-  m_SizeDelta: {x: 1056.54, y: 80.36}
+  m_AnchorMin: {x: 0.17361729, y: 0.7685343}
+  m_AnchorMax: {x: 0.8267655, y: 0.901}
+  m_AnchoredPosition: {x: 0, y: 0.5}
+  m_SizeDelta: {x: 0.54003906, y: 1.0999985}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1590649395
 MonoBehaviour:
@@ -6894,7 +7003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6902,19 +7011,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 64
+    m_Font: {fileID: 12800000, guid: 67cfdd00cb7616d44a2d21270e2f6b8d, type: 3}
+    m_FontSize: 80
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 96
-    m_Alignment: 1
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0412\u044B\u0431\u043E\u0440 \u043C\u0443\u0437\u044B\u043A\u0438\n"
+  m_Text: "\u0412\u044B\u0431\u0435\u0440\u0438 \u043C\u0443\u0437\u044B\u043A\u0443:"
 --- !u!222 &1590649396
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6950,9 +7059,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1623986713}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1055649777}
@@ -6961,7 +7070,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 308.5, y: -215.3}
+  m_AnchoredPosition: {x: 308.5, y: -269.30002}
   m_SizeDelta: {x: 474.5, y: 51.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1623986715
@@ -6976,8 +7085,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dae92b6b6ac80b447b15e4baa0997cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 21f30dcb30f5ac5489ba0ccd00517a48, type: 3}
-  playButton: {fileID: 1623986716}
+  audioClips: []
+  playButtons: []
+  buttonTexts: []
+  initialSprite: {fileID: 0}
+  selectedSprite: {fileID: 0}
   audioSource: {fileID: 897932618}
 --- !u!114 &1623986716
 MonoBehaviour:
@@ -7043,8 +7155,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 99579fd2e8c9fe84482e62a6f05f3f75, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -7096,8 +7208,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 2.115001}
+  m_SizeDelta: {x: 0, y: 4.229998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1637762543
 MonoBehaviour:
@@ -7112,7 +7224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7120,12 +7232,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_Font: {fileID: 12800000, guid: 31de2297abee95843996c918ecab7457, type: 3}
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 70
+    m_MinSize: 0
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -7179,7 +7291,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 308.5, y: -833.2999}
+  m_AnchoredPosition: {x: 308.5, y: -1067.2999}
   m_SizeDelta: {x: 474.5, y: 51.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1700049357
@@ -7194,8 +7306,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dae92b6b6ac80b447b15e4baa0997cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 2f6413b1f24eabd47a1c57d19eb07a29, type: 3}
-  playButton: {fileID: 1700049358}
+  audioClips: []
+  playButtons: []
+  buttonTexts: []
+  initialSprite: {fileID: 0}
+  selectedSprite: {fileID: 0}
   audioSource: {fileID: 897932618}
 --- !u!114 &1700049358
 MonoBehaviour:
@@ -7261,8 +7376,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 99579fd2e8c9fe84482e62a6f05f3f75, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -7449,8 +7564,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 2.115001}
+  m_SizeDelta: {x: 0, y: 4.229998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1711579890
 MonoBehaviour:
@@ -7465,7 +7580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7473,12 +7588,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_Font: {fileID: 12800000, guid: 31de2297abee95843996c918ecab7457, type: 3}
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 70
+    m_MinSize: 0
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -7899,8 +8014,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 2.115001}
+  m_SizeDelta: {x: 0, y: 4.229998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1789044943
 MonoBehaviour:
@@ -7915,7 +8030,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7923,12 +8038,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_Font: {fileID: 12800000, guid: 31de2297abee95843996c918ecab7457, type: 3}
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 70
+    m_MinSize: 0
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -8081,11 +8196,11 @@ RectTransform:
   m_Father: {fileID: 1457693110}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -180.1, y: -76.1}
-  m_SizeDelta: {x: 1826, y: 104.84973}
-  m_Pivot: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.077851854, y: 0.7907672}
+  m_AnchorMax: {x: 0.1367037, y: 0.906}
+  m_AnchoredPosition: {x: 0, y: 0.6015625}
+  m_SizeDelta: {x: 0, y: 1}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &1994922190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8175,7 +8290,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3d377fd372e4f1044a412da7343c0310, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 14b9cd9435a4eeb4e95d9f8ad1af0724, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -8355,9 +8470,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2066000807}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1239916439}
@@ -8366,7 +8481,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 308.5, y: -338.9}
+  m_AnchoredPosition: {x: 308.5, y: -428.9}
   m_SizeDelta: {x: 474.5, y: 51.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2066000809
@@ -8381,8 +8496,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dae92b6b6ac80b447b15e4baa0997cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: be619a426e301f14d81a6e3533cca5ec, type: 3}
-  playButton: {fileID: 2066000810}
+  audioClips: []
+  playButtons: []
+  buttonTexts: []
+  initialSprite: {fileID: 0}
+  selectedSprite: {fileID: 0}
   audioSource: {fileID: 897932618}
 --- !u!114 &2066000810
 MonoBehaviour:
@@ -8448,8 +8566,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 99579fd2e8c9fe84482e62a6f05f3f75, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -8639,7 +8757,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 308.5, y: -956.8999}
+  m_AnchoredPosition: {x: 308.5, y: -1226.9}
   m_SizeDelta: {x: 474.5, y: 51.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2109681189
@@ -8654,8 +8772,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dae92b6b6ac80b447b15e4baa0997cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: e2d733c1f1200d94b9d917f2228736ad, type: 3}
-  playButton: {fileID: 2109681190}
+  audioClips: []
+  playButtons: []
+  buttonTexts: []
+  initialSprite: {fileID: 0}
+  selectedSprite: {fileID: 0}
   audioSource: {fileID: 897932618}
 --- !u!114 &2109681190
 MonoBehaviour:
@@ -8721,8 +8842,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 99579fd2e8c9fe84482e62a6f05f3f75, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
