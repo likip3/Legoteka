@@ -71,6 +71,16 @@ public class UiControl : MonoBehaviour
         SceneManager.LoadScene("ChooseCrocodile");
     }
 
+    public void SceneChooseHorse()
+    {
+        SceneManager.LoadScene("ChooseHorse");
+    }
+
+    public void SceneChooseHouse()
+    {
+        SceneManager.LoadScene("ChooseHouse");
+    }
+
     public void SceneExitMenu()
     {
         SceneManager.LoadScene("ExitMenu");
