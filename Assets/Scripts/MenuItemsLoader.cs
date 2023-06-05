@@ -31,13 +31,13 @@ public class MenuItemsLoader : MonoBehaviour
         customMainMenuItems = new();
 
 
-        foreach (var item in Directory.GetFiles(Application.persistentDataPath + "/CustomStory/"))
+        foreach (var item in Directory.GetFiles(Application.persistentDataPath + "/FreeModeSave/"))
         {
-            var brickColl = SaveLoadSystem.DeXml(item.Remove(item.Length - 4).Split('/').Last(), "/CustomStory/");
-
-
-
-            customMainMenuItems.Add(new MainMenuItem(brickColl.fileName, CreateSetPreview(brickColl), Color.Lerp(SQLiteTasker.GetColorById(brickColl.BrickArray[0].brickID), SQLiteTasker.GetColorById(brickColl.BrickArray[1].brickID),.4f)));
+            var brickColl = SaveLoadSystem.DeXml(item.Remove(item.Length - 4).Split('/').Last(), "/FreeModeSave/");
+            customMainMenuItems.Add(new MainMenuItem(
+                brickColl.fileName,
+                CreateSetPreview(brickColl),
+                Color.Lerp(SQLiteTasker.GetColorById(brickColl.BrickArray[0].brickID), SQLiteTasker.GetColorById(brickColl.BrickArray[1].brickID), .4f)));
         }
 
 

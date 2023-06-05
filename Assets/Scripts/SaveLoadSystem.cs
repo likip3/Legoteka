@@ -25,7 +25,6 @@ public static class SaveLoadSystem
 		FileStream fs = new FileStream(datapath, FileMode.CreateNew);
 		serializer.Serialize(fs, collectionToXml);
 		fs.Close();
-
 	}
 
 	public static BrickCollectionXML DeXml(string name) => DeXml(name, "/");
@@ -57,7 +56,10 @@ public class BrickCollectionXML
 	[XmlArrayItem("Brick")]
 	public List<BrickXML> BrickArray = new List<BrickXML>();
 
-    public BrickCollectionXML(string fileName)
+	[XmlElement("Location")]
+	public BrickCollectionXML locationXML;
+
+	public BrickCollectionXML(string fileName)
     {
         this.fileName = fileName;
         time = DateTime.Now;

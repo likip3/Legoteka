@@ -25,7 +25,7 @@ public class ContentSavedView : MonoBehaviour
         {
             var temp = Instantiate(itemPrefab, transform);
             temp.GetComponent<SaveFilesItem>().Initialize(item.Split('/').Last());
-            temp.GetComponent<RectTransform>().localPosition = new Vector3(201, y);
+            temp.GetComponent<RectTransform>().localPosition = new Vector3(477, y);
             y -= 75;
         }
     }

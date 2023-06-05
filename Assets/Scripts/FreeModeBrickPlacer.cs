@@ -37,7 +37,7 @@ public class FreeModeBrickPlacer : MonoBehaviour
 
         if (SetLoaderStatic.instructionMode)
         {
-            LoadInstructionFor(SetLoaderStatic.setName, "/CustomStory/");
+            LoadInstructionFor(SetLoaderStatic.setName, "/FreeModeSave/");
             StartInstrucrion();
         }
 
@@ -122,6 +122,7 @@ public class FreeModeBrickPlacer : MonoBehaviour
     public static void LoadLocationState(string name, string subFolder)
     {
         var brickColl = SaveLoadSystem.DeXml(name, subFolder);
+        SetLoaderStatic.location = brickColl;
         ToLocationFromBrickCol(brickColl);
     }
 
@@ -158,7 +159,7 @@ public class FreeModeBrickPlacer : MonoBehaviour
             var brickData = brick.GetComponent<Brick>();
             brickColl.BrickArray.Add(new BrickXML(brickData.ID, brick.transform.position, brick.transform.rotation));
         }
-
+        brickColl.locationXML = SetLoaderStatic.location;
         return brickColl;
     }
 
@@ -168,6 +169,10 @@ public class FreeModeBrickPlacer : MonoBehaviour
     {
         var brickColl = SaveLoadSystem.DeXml(name, subFolder);
         ToSceneFromBrickCol(brickColl);
+        if (brickColl.locationXML == null)
+            return;
+        ToLocationFromBrickCol(brickColl.locationXML);
+        SetLoaderStatic.location = brickColl.locationXML;
     }
 
     public static void LoadInstructionFor(string name, string subFolder)
