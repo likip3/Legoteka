@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -433,7 +433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Content: {fileID: 1581644527}
+  m_Content: {fileID: 0}
   m_Horizontal: 0
   m_Vertical: 1
   m_MovementType: 1
@@ -441,9 +441,9 @@ MonoBehaviour:
   m_Inertia: 1
   m_DecelerationRate: 0.135
   m_ScrollSensitivity: 1
-  m_Viewport: {fileID: 451526671}
+  m_Viewport: {fileID: 0}
   m_HorizontalScrollbar: {fileID: 0}
-  m_VerticalScrollbar: {fileID: 1524879731}
+  m_VerticalScrollbar: {fileID: 0}
   m_HorizontalScrollbarVisibility: 2
   m_VerticalScrollbarVisibility: 2
   m_HorizontalScrollbarSpacing: -3
@@ -2436,7 +2436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bd74510f4eaef14e97993c3abf04327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 255380114}
+  canvas: {fileID: 0}
 --- !u!1 &578825614
 GameObject:
   m_ObjectHideFlags: 0
@@ -4449,41 +4449,41 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e2d733c1f1200d94b9d917f2228736ad, type: 3}
   - {fileID: 8300000, guid: 9a1b2c3d5207de94e85ab9934f89c2ca, type: 3}
   playButtons:
-  - {fileID: 1197476739}
-  - {fileID: 712326609}
-  - {fileID: 1272732863}
-  - {fileID: 1623986716}
-  - {fileID: 1267057212}
-  - {fileID: 2066000810}
-  - {fileID: 1337688307}
-  - {fileID: 40401380}
-  - {fileID: 492994023}
-  - {fileID: 115454812}
-  - {fileID: 393055757}
-  - {fileID: 1586618680}
-  - {fileID: 229203126}
-  - {fileID: 1700049358}
-  - {fileID: 817310427}
-  - {fileID: 2109681190}
-  - {fileID: 1420271612}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   buttonTexts:
-  - {fileID: 1789044943}
-  - {fileID: 715767386}
-  - {fileID: 783140700}
-  - {fileID: 1055649778}
-  - {fileID: 983467582}
-  - {fileID: 1239916440}
-  - {fileID: 1102600320}
-  - {fileID: 152594658}
-  - {fileID: 1711579890}
-  - {fileID: 1462266050}
-  - {fileID: 1357257827}
-  - {fileID: 512479688}
-  - {fileID: 79779611}
-  - {fileID: 1637762543}
-  - {fileID: 1485254248}
-  - {fileID: 1567719732}
-  - {fileID: 1435370098}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   initialSprite: {fileID: 21300000, guid: 99579fd2e8c9fe84482e62a6f05f3f75, type: 3}
   selectedSprite: {fileID: 21300000, guid: 8eb29e32dffac78409473d56f76daf28, type: 3}
   audioSource: {fileID: 897932618}

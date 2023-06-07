@@ -81,7 +81,7 @@ public class MenuItemsLoader : MonoBehaviour
                 tempInst.GetComponent<Button>().onClick.AddListener(delegate { SceneManager.LoadScene(item.SceneName); });
 
 
-            tempInst.transform.GetChild(0).gameObject.SetActive(false);
+            //tempInst.transform.GetChild(0).gameObject.SetActive(false);
             //if (item.InstructionURL is not null && item.InstructionURL.Length == 0)
             //    tempInst.transform.GetChild(0).gameObject.SetActive(false);
             //else

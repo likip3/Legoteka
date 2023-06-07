@@ -970,7 +970,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.8463216}
   m_AnchorMax: {x: 1, y: 0.984273}
-  m_AnchoredPosition: {x: -0.50024414, y: 0}
+  m_AnchoredPosition: {x: -0.5, y: 0}
   m_SizeDelta: {x: -1, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &704165724
@@ -1085,7 +1085,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.9174737, y: 0.07}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000076293945}
+  m_AnchoredPosition: {x: 0, y: -0.000091552734}
   m_SizeDelta: {x: 0.0001, y: -0.00022888}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &793049361
@@ -1388,7 +1388,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.8705834}
   m_AnchorMax: {x: 0.13068752, y: 1}
-  m_AnchoredPosition: {x: 21.947998, y: -51.735016}
+  m_AnchoredPosition: {x: 21.948242, y: -51.735016}
   m_SizeDelta: {x: -43.63492, y: 78.42497}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &905519942
@@ -1655,7 +1655,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.72914565, y: 0.48900002}
   m_AnchorMax: {x: 0.97058344, y: 0.625}
-  m_AnchoredPosition: {x: 0.20007324, y: -0.5000458}
+  m_AnchoredPosition: {x: 0.20019531, y: -0.5000458}
   m_SizeDelta: {x: -2, y: 0.80000305}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &964345783
@@ -2896,7 +2896,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.46300003, y: 0.2594362}
   m_AnchorMax: {x: 0.97058344, y: 0.3946123}
-  m_AnchoredPosition: {x: -0.5, y: 0.10003662}
+  m_AnchoredPosition: {x: -0.5, y: 0.099975586}
   m_SizeDelta: {x: -0.5, y: 0.80000305}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1259230956
@@ -3040,7 +3040,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.45700002, y: 0.6572908}
   m_AnchorMax: {x: 0.97900003, y: 0.82100004}
-  m_AnchoredPosition: {x: 0.2999878, y: 0}
+  m_AnchoredPosition: {x: 0.30004883, y: 0}
   m_SizeDelta: {x: -1.8499756, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1283819663
@@ -4154,7 +4154,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.034, y: 0.032351144}
   m_AnchorMax: {x: 0.441, y: 0.77500004}
-  m_AnchoredPosition: {x: -0.5, y: -0.000061035156}
+  m_AnchoredPosition: {x: -0.5, y: -0.00012207031}
   m_SizeDelta: {x: -1, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1940573282
@@ -4462,14 +4462,14 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 2012161881}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1602098277}
-        m_TargetAssemblyTypeName: UiControl, Assembly-CSharp
-        m_MethodName: InstructionCrocodile
+      - m_Target: {fileID: 1213570503}
+        m_TargetAssemblyTypeName: ChooseLoader, Assembly-CSharp
+        m_MethodName: onInstructionButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

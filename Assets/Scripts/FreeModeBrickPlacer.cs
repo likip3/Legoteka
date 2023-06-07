@@ -22,12 +22,20 @@ public class FreeModeBrickPlacer : MonoBehaviour
 
     [SerializeField]
     private AudioSource soundSource;
-    private Material ghostMaterial;
+    private static Material ghostMaterial;
+
+    public static List<Step> InstructionSteps => instructionSteps;
+
+    public static Material GhostMaterial=> ghostMaterial;
 
     private void Awake()
     {
         mainCamera = Camera.main;
         ghostMaterial = Resources.Load<Material>("GhostMaterial");
+    }
+
+    private void Start()
+    {
         TryLoadSet();
     }
 
@@ -46,8 +54,8 @@ public class FreeModeBrickPlacer : MonoBehaviour
 
         SetLoaderStatic.enabled = false;
     }
-
-    public void StartInstrucrion()
+    public static void StartInstrucrion() => StartInstrucrion(false);
+    public static void StartInstrucrion(bool instOnly)
     {
 
         if (instructionSteps.Count < 1) return;
@@ -61,12 +69,13 @@ public class FreeModeBrickPlacer : MonoBehaviour
             else
                 return 0;
         });
+        if (instOnly) return;
         instructionStepIndex = -1;
         isInstruction = true;
         NextStepInstrucrion();
     }
 
-    private void NextStepInstrucrion()
+    private static void NextStepInstrucrion()
     {
         instructionStepIndex++;
         if (instructionSteps.Count-1 < instructionStepIndex)
@@ -511,7 +520,7 @@ public class FreeModeBrickPlacer : MonoBehaviour
 
 
     #endregion
-    private class Step
+    public class Step
     {
         public Vector3 pos;
         public Quaternion rotation;

@@ -8,6 +8,7 @@ public class ChooseLoader : MonoBehaviour
     public void onButtonInstruction() => SetLoaderStatic.instructionMode = true;
     public void onButtonNoInstruction() => SetLoaderStatic.instructionMode = false;
     public void onStartButton() => UnityEngine.SceneManagement.SceneManager.LoadScene("FreeMode");
+    public void onInstructionButton() => UnityEngine.SceneManagement.SceneManager.LoadScene("InstructionViewer");
 
 
     [SerializeField] private Text setName;
