@@ -80,23 +80,16 @@ public class MenuItemsLoader : MonoBehaviour
             else
                 tempInst.GetComponent<Button>().onClick.AddListener(delegate { SceneManager.LoadScene(item.SceneName); });
 
-
-            //tempInst.transform.GetChild(0).gameObject.SetActive(false);
-            //if (item.InstructionURL is not null && item.InstructionURL.Length == 0)
-            //    tempInst.transform.GetChild(0).gameObject.SetActive(false);
-            //else
-            //    tempInst.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(delegate { Application.OpenURL(item.InstructionURL); });
-
-            tempInst.transform.GetChild(2).GetComponent<Text>().text = item.Name;
+            tempInst.transform.GetChild(1).GetComponent<Text>().text = item.Name;
             if (item.renderTexture == null)
             {
-                tempInst.transform.GetChild(3).GetComponent<Image>().sprite = item.Image;
+                tempInst.transform.GetChild(2).GetComponent<Image>().sprite = item.Image;
             }
             else
             {
-                var tempMat = new Material(tempInst.transform.GetChild(3).GetComponent<Image>().material);
-                tempMat.mainTexture = item.renderTexture;
-                tempInst.transform.GetChild(3).GetComponent<Image>().material = tempMat;
+                tempInst.transform.GetChild(2).gameObject.SetActive(false);
+                tempInst.transform.GetChild(3).gameObject.SetActive(true);
+                tempInst.transform.GetChild(3).GetComponent<RawImage>().texture = item.renderTexture;
             }
         }
     }
@@ -130,7 +123,7 @@ public class MenuItemsLoader : MonoBehaviour
         public MainMenuItem(string name, RenderTexture render, Color background, string sceneName)
         {
             this.name = name;
-            this.renderTexture = render;
+            renderTexture = render;
             backgroundColor = background;
             this.sceneName = sceneName;
             instructionLink = null;
@@ -139,9 +132,9 @@ public class MenuItemsLoader : MonoBehaviour
         public MainMenuItem(string name, RenderTexture render, Color background)
         {
             this.name = name;
-            this.renderTexture = render;
+            renderTexture = render;
             backgroundColor = background;
-            this.customSetName = name;
+            customSetName = name;
             instructionLink = null;
         }
     }

@@ -19,11 +19,17 @@ public class InstructionWalker : MonoBehaviour
 
     public void NextStep()
     {
-        if (FreeModeBrickPlacer.InstructionSteps.Count - 1 <= stepIndex) return;
+        if (stepIndex > FreeModeBrickPlacer.InstructionSteps.Count - 1) return;
         stepIndex++;
         var mat = new Material(BrickDatabase.DefaultMaterial);
         (ghostNow.GetComponent<MeshRenderer>().material = mat).color = SQLiteTasker.GetColorById(ghostNow.ID);
         brickSteps.Push(ghostNow);
+        if (stepIndex == FreeModeBrickPlacer.InstructionSteps.Count)
+        {
+            ghostNow = null;
+            return;
+        }
+
         ghostNow = SpawnGhostForIdx(stepIndex);
     }
 
@@ -31,7 +37,8 @@ public class InstructionWalker : MonoBehaviour
     {
         if (stepIndex <= 0) return;
         stepIndex--;
-        Destroy(ghostNow.gameObject);
+        if(ghostNow is not null) 
+            Destroy(ghostNow.gameObject);
         ghostNow = brickSteps.Pop();
         var color = SQLiteTasker.GetColorById(ghostNow.ID);
         color.a = .35f;

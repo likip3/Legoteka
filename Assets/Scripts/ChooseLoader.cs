@@ -12,16 +12,12 @@ public class ChooseLoader : MonoBehaviour
 
 
     [SerializeField] private Text setName;
-    [SerializeField] private Image preview;
+    [SerializeField] private RawImage preview;
 
     private void Awake()
     {
         setName.text = SetLoaderStatic.setName;
-        var tempMat = new Material(preview.material);
-        tempMat.mainTexture = SetLoaderStatic.preview;
-        preview.material = tempMat;
-
-
+        preview.texture = MenuItemsLoader.CreateSetPreview(SaveLoadSystem.DeXml(SetLoaderStatic.setName, "/FreeModeSave/"));
     }
 
 }
