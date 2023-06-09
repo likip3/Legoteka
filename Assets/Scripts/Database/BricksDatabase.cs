@@ -255,7 +255,7 @@ public class ListItem
 public class BrickDBItem
 {
     [SerializeField] private string brickID;
-    [SerializeField] private Sprite brickPreview;
+    [Obsolete("Не робит")][SerializeField] private Sprite brickPreview;
     [SerializeField] private Color color;
     [SerializeField] private RenderTexture renderTexture;
     private GameObject gameObject;
@@ -317,4 +317,5 @@ public class BrickDBItem
     }
 
     public Color Color { get => color; set => color = value; }
+    public GameObject GameObject { get => gameObject; set => gameObject = value; }
 }

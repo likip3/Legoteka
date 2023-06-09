@@ -1,5 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement name="header" style="height: 240px; width: 876px; align-items: flex-start; transform-origin: top; flex-direction: row; display: flex; position: absolute; margin-left: auto; left: auto; right: 0; top: 0;">
+    <ui:VisualElement name="header" style="height: 240px; width: 876px; align-items: flex-start; transform-origin: top; flex-direction: row; display: none; position: absolute; margin-left: auto; left: auto; right: 0; top: 0;">
         <ui:VisualElement name="detal-preview" style="height: 200px; width: 256px; background-image: none; margin-top: auto; margin-bottom: auto; margin-left: 40px;" />
         <ui:VisualElement name="detal-info" style="margin-top: auto; margin-bottom: auto;">
             <ui:Label text="Дижитал дизигнер" display-tooltip-when-elided="true" name="item-name-label" style="font-size: 56px; -unity-font-style: bold;" />
@@ -18,8 +18,8 @@
                 </ui:VisualElement>
             </ui:ScrollView>
             <ui:VisualElement name="footter" style="height: 15%; background-color: rgb(123, 123, 123); align-items: center; justify-content: space-around; flex-direction: row; display: flex;">
-                <ui:Button text="Collapse all" display-tooltip-when-elided="true" name="collapse-button" style="width: 47%; height: 90%; -unity-text-align: middle-center; margin-left: 10px; margin-right: 10px; font-size: 34px; -unity-font-style: bold;" />
-                <ui:Button text="Close" display-tooltip-when-elided="true" name="close-button" style="width: 47%; height: 90%; -unity-text-align: middle-center; margin-left: 10px; margin-right: 10px; font-size: 34px; -unity-font-style: bold;" />
+                <ui:Button text="Свернуть всё" display-tooltip-when-elided="true" name="collapse-button" style="width: 47%; height: 90%; -unity-text-align: middle-center; margin-left: 10px; margin-right: 10px; font-size: 34px; -unity-font-style: bold;" />
+                <ui:Button text="Закрыть" display-tooltip-when-elided="true" name="close-button" style="width: 47%; height: 90%; -unity-text-align: middle-center; margin-left: 10px; margin-right: 10px; font-size: 34px; -unity-font-style: bold;" />
             </ui:VisualElement>
         </ui:GroupBox>
         <DragUI style="width: 40px; height: 100%; position: relative; background-color: rgb(255, 255, 255); left: auto; flex-shrink: 0;" />

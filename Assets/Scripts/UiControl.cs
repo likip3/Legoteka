@@ -91,6 +91,12 @@ public class UiControl : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    public void BackToSettings()
+    {
+        SceneManager.LoadScene("MainMenu");
+        CanvasToggle.isInSettings = true;
+    }
+
     public void CloseApp()
     {
         Application.Quit();

@@ -49,8 +49,10 @@ public class UIController : MonoBehaviour
         scrollViewMain = root.Q<ScrollView>("scroll-view-main");
         collapseButton.clicked += CollapseAll;
         closeButton.clicked += CloseMenu;
-
-        CreateExtandButtons(bricks);
+        if(SetLoaderStatic.enabled)
+            JustCreateButtons(ToBrickDBItemList(SetLoaderStatic.GetBrickList(SaveLoadSystem.DeXml(SetLoaderStatic.setName, "/FreeModeSave/"))));
+        else
+            CreateExtandButtons(bricks);
     }
 
 
@@ -139,7 +141,7 @@ public class UIController : MonoBehaviour
             {
                 //ObjectSpawn(item.GM, det.Material);
                 ObjectBrickSpawn(item.GM, det);
-                ButtonVisualise(det.ID.ToString(), item.Tags, det.RenderTexture);
+                //ButtonVisualise(det.ID.ToString(), item.Tags, det.RenderTexture);
             };
             templateButton.style.backgroundImage = new StyleBackground(Background.FromRenderTexture(det.RenderTexture));
             extender.Add(templateButton);
@@ -169,6 +171,31 @@ public class UIController : MonoBehaviour
 
             itemsContainer.Add(extBack);
         }
+    }
+
+    private void JustCreateButtons(List<BrickDBItem> items)
+    {
+        foreach (var det in items)
+        {
+            var templateButton = templateButtonUXML.Instantiate().Q<Button>();
+            templateButton.clicked += delegate
+            {
+                //ObjectSpawn(item.GM, det.Material);
+                ObjectBrickSpawn(det.GameObject, det);
+            };
+            templateButton.style.backgroundImage = new StyleBackground(Background.FromRenderTexture(det.RenderTexture));
+            itemsContainer.Add(templateButton);
+        }
+    }
+
+    public static List<BrickDBItem> ToBrickDBItemList(List<BrickXML> col)
+    {
+        List<BrickDBItem> listF = new();
+        foreach (var item in col)
+        {
+            listF.Add(new BrickDBItem(item.brickID,SQLiteTasker.GetColorById(item.brickID), SQLiteTasker.BrickDict[item.brickID].gameObject));
+        }
+        return listF;
     }
 
 }
