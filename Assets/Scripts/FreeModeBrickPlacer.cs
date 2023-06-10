@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FreeModeBrickPlacer : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class FreeModeBrickPlacer : MonoBehaviour
     private Box boxToRender;
     private Color colorBox;
     private bool isBoxRender;
+
+    public Text textComponent;
 
     [SerializeField]
     private AudioSource soundSource;
@@ -119,7 +122,7 @@ public class FreeModeBrickPlacer : MonoBehaviour
             unPress = true;
     }
 
-    public void OnSavePresed() => SaveBrickState("Тестовыя абоба", "/FreeModeSave/");
+    public void OnSavePresed() => SaveBrickState(textComponent.text, "/FreeModeSave/");
     public void OnLoadPresed() => LoadBrickState("Тестовыя абоба", "/FreeModeSave/");
 
 

@@ -16,6 +16,9 @@ public class UIController : MonoBehaviour
     private GameObject openButton;
 
     [SerializeField]
+    private GameObject backButton;
+
+    [SerializeField]
     private FreeModeBrickPlacer rootGrid;
 
     [SerializeField]
@@ -87,6 +90,7 @@ public class UIController : MonoBehaviour
 
     private void CloseMenu()
     {
+        backButton.SetActive(true);
         openButton.SetActive(true);
         gameObject.SetActive(false);
     }
