@@ -3454,7 +3454,7 @@ MonoBehaviour:
   backgroundActiveColor: {r: 0.9843137, g: 0.8784314, b: 0.07450981, a: 1}
   backgroundImage: {fileID: 189711015}
   activeSceneName: HorseWithHelper
-  inactiveSceneName: HorseWithHelper
+  inactiveSceneName: HorseNoHelper
 --- !u!114 &1597361988
 MonoBehaviour:
   m_ObjectHideFlags: 0

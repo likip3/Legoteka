@@ -62,4 +62,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HouseNoHelper.unity
     guid: 770c638e230088d4392f56d4567db83b
+  - enabled: 1
+    path: Assets/Scenes/HorseNoHelper.unity
+    guid: 55f87879d67d04c47ab1dc24a22b212e
   m_configObjects: {}
