@@ -21,11 +21,12 @@ public class FreeModeBrickPlacer : MonoBehaviour
     private Color colorBox;
     private bool isBoxRender;
 
-    public Text textComponent;
-
     [SerializeField]
     private AudioSource soundSource;
     private static Material ghostMaterial;
+
+    [SerializeField] 
+    private InputField InputSaveField;
 
     public static List<Step> InstructionSteps => instructionSteps;
 
@@ -122,9 +123,17 @@ public class FreeModeBrickPlacer : MonoBehaviour
             unPress = true;
     }
 
-    public void OnSavePresed() => SaveBrickState(textComponent.text, "/FreeModeSave/");
-    public void OnLoadPresed() => LoadBrickState("Тестовыя абоба", "/FreeModeSave/");
+    public void OnSavePresed()
+    {
+        if (InputSaveField.text.Length <= 0) return;
 
+        SaveBrickState(InputSaveField.text, "/FreeModeSave/");
+    }
+
+    public void OnLoadPresed(string name)
+    {
+        LoadBrickState(name, "/FreeModeSave/");
+    }
 
     public void OnSaveLocationPresed() => SaveBrickState("Тестовыя лока абоба", "/CustomLocations/");
     public void OnLoadLocationPresed() => LoadBrickState("Тестовыя лока абоба", "/CustomLocations/");

@@ -35,6 +35,12 @@ public class UIController : MonoBehaviour
     private ScrollView scrollViewMain;
     private List<VisualElement> extendersToCollapse = new List<VisualElement>();
     private bool isDraging;
+    private bool isLoadedSet;
+
+    private void Awake()
+    {
+        isLoadedSet = SetLoaderStatic.enabled;
+    }
 
     void OnEnable()
     {
@@ -52,7 +58,7 @@ public class UIController : MonoBehaviour
         scrollViewMain = root.Q<ScrollView>("scroll-view-main");
         collapseButton.clicked += CollapseAll;
         closeButton.clicked += CloseMenu;
-        if(SetLoaderStatic.enabled)
+        if(isLoadedSet)
             JustCreateButtons(ToBrickDBItemList(SetLoaderStatic.GetBrickList(SaveLoadSystem.DeXml(SetLoaderStatic.setName, "/FreeModeSave/"))));
         else
             CreateExtandButtons(bricks);
