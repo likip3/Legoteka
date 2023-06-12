@@ -59,4 +59,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/InstructionViewer.unity
     guid: f8cf73592d3af2b41b22af0141a3619c
+  - enabled: 1
+    path: Assets/Scenes/HouseNoHelper.unity
+    guid: 770c638e230088d4392f56d4567db83b
   m_configObjects: {}
