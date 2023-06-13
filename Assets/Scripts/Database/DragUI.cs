@@ -22,7 +22,7 @@ public class DragUI : VisualElement
         element.style.width = new Length(100, LengthUnit.Percent);
         element.style.height = new Length(100, LengthUnit.Percent);
 
-        element.style.backgroundColor = new Color(127f / 255f, 118f / 255f, 121f / 255f);
+        element.style.backgroundColor = new Color(25f / 255f, 88f / 255f, 130f / 255f);
 
         rootDragger = GameObject.FindGameObjectWithTag("uiDrag").GetComponent<UIController>();
 
@@ -32,7 +32,7 @@ public class DragUI : VisualElement
     private void OnMouseUp(MouseUpEvent evt)
     {
         VisualElement targetElement = (VisualElement)evt.target;
-        targetElement.style.backgroundColor = new Color(127f / 255f, 118f / 255f, 121f / 255f);
+        targetElement.style.backgroundColor = new Color(25f / 255f, 88f / 255f, 130f / 255f);
 
         rootDragger.SetDrag(false);
     }
@@ -40,7 +40,7 @@ public class DragUI : VisualElement
     private void OnMouseDown(MouseDownEvent evt)
     {
         VisualElement targetElement = (VisualElement)evt.target;
-        targetElement.style.backgroundColor = new Color(197f / 255f, 198f / 255f, 191f / 255f);
+        targetElement.style.backgroundColor = new Color(97f / 255f, 160f / 255f, 212f / 255f);
 
         rootDragger.SetDrag(true);
 

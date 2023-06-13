@@ -6463,19 +6463,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1149118792}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 171170475}
-        m_TargetAssemblyTypeName: FreeModeBrickPlacer, Assembly-CSharp
-        m_MethodName: StartInstrucrion
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1149118792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6496,7 +6484,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 521a674159b54fb4a8ff14317f975dfe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fb50ec4873a5dd14fb84cef15d0e303d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6725,7 +6713,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4553131273615546, guid: 1d6b5125586ca01438cfae10b0d887a5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: -0.51
       objectReference: {fileID: 0}
     - target: {fileID: 4553131273615546, guid: 1d6b5125586ca01438cfae10b0d887a5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7698,7 +7686,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1553701583
 MonoBehaviour:
   m_ObjectHideFlags: 0
