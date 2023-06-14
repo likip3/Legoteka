@@ -9,7 +9,7 @@ public class LoadButtonsForFreemode : MonoBehaviour
     [SerializeField]
     private GameObject itemPrefab;
     [SerializeField]
-    private Transform container;
+    private RectTransform container;
 
     private void OnEnable() => UpdateList();
 
@@ -17,6 +17,7 @@ public class LoadButtonsForFreemode : MonoBehaviour
     public void UpdateList() => StartCoroutine(UpdateListCoroutine());
     public IEnumerator UpdateListCoroutine()
     {
+        container.sizeDelta = new Vector2(container.rect.width, 0);
         foreach (var GM in GameObject.FindGameObjectsWithTag("UIContentItem"))
         {
             Destroy(GM);
@@ -25,10 +26,11 @@ public class LoadButtonsForFreemode : MonoBehaviour
         var y = 0;
         foreach (var item in Directory.GetFiles(Application.persistentDataPath + "/FreeModeSave/"))
         {
-            var temp = Instantiate(itemPrefab, transform);
+            var temp = Instantiate(itemPrefab, container);
             temp.GetComponent<LoadFilesItem>().Initialize(item.Remove(item.Length - 4).Split('/').Last());
-            temp.GetComponent<RectTransform>().localPosition = new Vector3(477, y);
-            y -= 140;
+            temp.GetComponent<RectTransform>().localPosition = new Vector3(0, y);
+            y -= 290;
+            container.sizeDelta = new Vector2(container.rect.width, container.rect.height + 290);
         }
     }
 

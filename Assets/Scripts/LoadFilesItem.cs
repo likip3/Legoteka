@@ -27,6 +27,7 @@ public class LoadFilesItem : MonoBehaviour
     private void OnLoadClicked(string name)
     {
         FreeModeBrickPlacer.LoadBrickState(name, "/FreeModeSave/");
+        gameObject.GetComponentInParent<LoadButtonsForFreemode>().ToggleSelf();
     }
 
     private void OnDeleteClicked(string name)

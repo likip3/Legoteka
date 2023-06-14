@@ -22,7 +22,6 @@ public class ColorMenu : MonoBehaviour
     public void OpenMenu()
     {
         gameObject.SetActive(true);
-        UpdateColorList();
         CameraControll.movingState = false;
     }
 
@@ -35,13 +34,7 @@ public class ColorMenu : MonoBehaviour
 
     private void Start()
     {
-        
-    }
-
-    private void Update()
-    {
-        //if (!colorPicker.activeInHierarchy) return;
-
+        UpdateColorList();
     }
 
     public void UpdateColorList()
