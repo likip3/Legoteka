@@ -33,4 +33,23 @@ public static class SetLoaderStatic
         }
         return false;
     }
+    public static List<BrickDBItem> GetBrickList(List<BrickDBItem> brickColl)
+    {
+        var unicBricks = new List<BrickDBItem>();
+        foreach (var brick in brickColl)
+        {
+            if (!CheckInList(unicBricks, brick))
+                unicBricks.Add(brick);
+        }
+        return unicBricks;
+    }
+    private static bool CheckInList(List<BrickDBItem> list, BrickDBItem el)
+    {
+        foreach (var brick in list)
+        {
+            if (brick.ID == el.ID)
+                return true;
+        }
+        return false;
+    }
 }

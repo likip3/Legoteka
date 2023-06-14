@@ -55,6 +55,16 @@ public struct RenderTask
         }
     }
 
+    public RenderTask(RenderTexture texture, GameObject gameObject, Material material, Vector3 position, Quaternion rotation)
+    {
+        this.texture = texture;
+        this.gameObject = gameObject;
+        this.position = position;
+        this.rotation = rotation;
+        this.scale = Vector3.one;
+        this.material = material;
+    }
+
     /// <summary>
     /// The struct, which holds all the information to create the preview image.
     /// </summary>

@@ -85,13 +85,14 @@ public static class BrickDatabase
         bricksCategories.RemoveAt(index);
 
     }
+    public static RenderTexture CreatePreviewRender(GameObject gameObject, Color color) => CreatePreviewRender(gameObject, color, Vector3.zero, Quaternion.identity);
 
-    public static RenderTexture CreatePreviewRender(GameObject gameObject, Color color)
+    public static RenderTexture CreatePreviewRender(GameObject gameObject, Color color, Vector3 pos, Quaternion rotarion)
     {
         var renderTexture = new RenderTexture(renderResolution, renderResolution, 16);
         var material = new Material(defaultMaterial);
         material.color = color;
-        var renderTask = new RenderTask(renderTexture, gameObject, material);
+        var renderTask = new RenderTask(renderTexture, gameObject, material, pos, rotarion);
         ObjectPreviewRenderer.current.RenderPreview(renderTask);
         return renderTexture;
     }
