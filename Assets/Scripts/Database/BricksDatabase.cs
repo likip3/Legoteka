@@ -146,6 +146,21 @@ public class ListItem
     new Color(1,1,0),
     new Color(1,1,1),
     new Color(0,1,1),
+
+    new Color(0,.5f,0),
+    new Color(1,.71f,.76f),
+    new Color(1,.55f,0),
+    new Color(.5f,.5f,0),
+    new Color(1,0,1),
+    new Color(.29f,0,.51f),
+    new Color(.54f,.17f,.89f),
+    new Color(.55f,0,.55f),
+    new Color(.55f,.27f,.7f),
+    new Color(.5f,0,0),
+    new Color(0,0,0),
+    new Color(.41f,.41f,.41f),
+    new Color(0,.39f,0),
+    new Color(1,.63f,.48f),
     };
 
     public void AddItem()
