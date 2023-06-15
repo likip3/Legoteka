@@ -286,6 +286,8 @@ public class BrickDBItem
 
     public BrickDBItem(string id, Color color, GameObject gameObject)
     {
+        while (BrickDatabase.IsBrickIDTaken(id.ToString()))
+            id += 1;
         brickID = id;
         this.color = color;
         if (gameObject is null) return;
