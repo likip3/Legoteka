@@ -7,8 +7,9 @@ public class InstructionWalker : MonoBehaviour
     private int stepIndex = 0;
     private Stack<Brick> brickSteps;
     private Brick ghostNow;
+    public GameObject Success;
 
-    void Start()
+    public void Start()
     {
         brickSteps = new();
         FreeModeBrickPlacer.LoadInstructionFor(SetLoaderStatic.setName, "/FreeModeSave/");
@@ -16,10 +17,26 @@ public class InstructionWalker : MonoBehaviour
         ghostNow = SpawnGhostForIdx(0);
     }
 
+    public void Restart()
+    {
+        for (var i = 0; i < FreeModeBrickPlacer.InstructionSteps.Count; i++)
+        {
+            PreviousStep();
+        }
+    }
+
 
     public void NextStep()
     {
-        if (stepIndex > FreeModeBrickPlacer.InstructionSteps.Count - 1) return;
+        if (stepIndex == FreeModeBrickPlacer.InstructionSteps.Count - 1)
+        {
+            Success.SetActive(true);
+        }
+
+        else if (stepIndex > FreeModeBrickPlacer.InstructionSteps.Count - 1)
+        {
+            return;
+        }
         stepIndex++;
         var mat = new Material(BrickDatabase.DefaultMaterial);
         (ghostNow.GetComponent<MeshRenderer>().material = mat).color = SQLiteTasker.GetColorById(ghostNow.ID);
@@ -37,6 +54,7 @@ public class InstructionWalker : MonoBehaviour
     {
         if (stepIndex <= 0) return;
         stepIndex--;
+        Success.SetActive(false);
         if(ghostNow is not null) 
             Destroy(ghostNow.gameObject);
         ghostNow = brickSteps.Pop();

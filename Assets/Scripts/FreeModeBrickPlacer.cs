@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class FreeModeBrickPlacer : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class FreeModeBrickPlacer : MonoBehaviour
     private Box boxToRender;
     private Color colorBox;
     private bool isBoxRender;
+    public static GameObject Success;
 
     [SerializeField]
     private AudioSource soundSource;
@@ -40,7 +42,21 @@ public class FreeModeBrickPlacer : MonoBehaviour
 
     private void Start()
     {
+        Success = GameObject.Find("Success");
+        Success.SetActive(false);
         TryLoadSet();
+    }
+
+    public void Restart()
+    {
+        for (var i = 0; i < instructionSteps.Count; i++)
+        {
+            instructionStepIndex++;
+            Undo();
+        }
+        Success.SetActive(false);
+        LoadInstructionFor(SetLoaderStatic.setName, "/FreeModeSave/");
+        StartInstrucrion();
     }
 
     private void TryLoadSet()
@@ -53,7 +69,7 @@ public class FreeModeBrickPlacer : MonoBehaviour
             StartInstrucrion();
         }
 
-        //нужно отображать только брики из набора
+        //РЅСѓР¶РЅРѕ РѕС‚РѕР±СЂР°Р¶Р°С‚СЊ С‚РѕР»СЊРєРѕ Р±СЂРёРєРё РёР· РЅР°Р±РѕСЂР°
 
 
         SetLoaderStatic.enabled = false;
@@ -85,6 +101,7 @@ public class FreeModeBrickPlacer : MonoBehaviour
         if (instructionSteps.Count-1 < instructionStepIndex)
         {
             isInstruction = false;
+            Success.SetActive(true);
             return;
         }
 
@@ -135,9 +152,9 @@ public class FreeModeBrickPlacer : MonoBehaviour
         LoadBrickState(name, "/FreeModeSave/");
     }
 
-    public void OnSaveLocationPresed() => SaveBrickState("Тестовыя лока абоба", "/CustomLocations/");
-    public void OnLoadLocationPresed() => LoadBrickState("Тестовыя лока абоба", "/CustomLocations/");
-    public void OnFreeModeLoadLocationPresed() => LoadLocationState("Тестовыя лока абоба", "/CustomLocations/");
+    public void OnSaveLocationPresed() => SaveBrickState("РўРµСЃС‚РѕРІС‹СЏ Р»РѕРєР° Р°Р±РѕР±Р°", "/CustomLocations/");
+    public void OnLoadLocationPresed() => LoadBrickState("РўРµСЃС‚РѕРІС‹СЏ Р»РѕРєР° Р°Р±РѕР±Р°", "/CustomLocations/");
+    public void OnFreeModeLoadLocationPresed() => LoadLocationState("РўРµСЃС‚РѕРІС‹СЏ Р»РѕРєР° Р°Р±РѕР±Р°", "/CustomLocations/");
 
 
     public static void LoadLocationState(string name, string subFolder)
@@ -317,7 +334,7 @@ public class FreeModeBrickPlacer : MonoBehaviour
             Debug.DrawRay(hit.point + new Vector3(0, 0.01f), Vector3.down * hit.transform.InverseTransformPoint(hit.point).z + new Vector3(0, 0.01f), Color.magenta, .1f);
 
             if (Physics.Raycast(hit.point + new Vector3(0, 0.01f), Vector3.down, out var downPoint, hit.transform.InverseTransformPoint(hit.point).z + 0.01f)
-                && downPoint.collider.gameObject.layer != 7) //ось z т.к. модели из блендера, а "вверх" в блендере это ось z. И мы используем локальные координаты.
+                && downPoint.collider.gameObject.layer != 7) //РѕСЃСЊ z С‚.Рє. РјРѕРґРµР»Рё РёР· Р±Р»РµРЅРґРµСЂР°, Р° "РІРІРµСЂС…" РІ Р±Р»РµРЅРґРµСЂРµ СЌС‚Рѕ РѕСЃСЊ z. Р РјС‹ РёСЃРїРѕР»СЊР·СѓРµРј Р»РѕРєР°Р»СЊРЅС‹Рµ РєРѕРѕСЂРґРёРЅР°С‚С‹.
             {
                 y = downPoint.point.y - 0.2f;
             }

@@ -10,6 +10,7 @@ public class InstructionMaker : MonoBehaviour
     public List<GameObject> Panels;
     public List<GameObject> Images;
     public GameObject Check;
+    public GameObject Success;
 
     private List<string> Instructions;
     private Dictionary<string, Transform> Models;
@@ -79,5 +80,6 @@ public class InstructionMaker : MonoBehaviour
         foreach (var panel in Panels)
             panel.SetActive(false);
         Check.SetActive(true);
+        Success.SetActive(true);
     }
 }
