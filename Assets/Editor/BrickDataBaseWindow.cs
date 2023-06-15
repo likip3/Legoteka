@@ -34,6 +34,8 @@ public class BrickDataBaseWindow : EditorWindow
     private TextField b_IdField;
     private ColorField b_ColorField;
 
+    private Color colorToAdd;
+
     public void CreateGUI()
     {
         //Формирование формы
@@ -88,6 +90,33 @@ public class BrickDataBaseWindow : EditorWindow
 
 
         UpdateCategoryList();
+        CreateColorAdder();
+    }
+
+    private void CreateColorAdder()
+    {
+        var colorAdder = rootVisualElement.Q<VisualElement>("color-adder");
+
+        colorAdder.Q<Button>("color-add").RegisterCallback<MouseUpEvent>(ColorAdd_Clicked, TrickleDown.TrickleDown);
+
+        var ca_Color = new ColorField();
+        ca_Color.showAlpha = false;
+        ca_Color.value = new Color(.5f, 0, 0, 1);
+        ca_Color.RegisterValueChangedCallback(v => ColorAdder_ColorChanged(v));
+        colorAdder.Add(ca_Color);
+    }
+
+    private void ColorAdder_ColorChanged(ChangeEvent<Color> v)
+    {
+        colorToAdd = v.newValue;
+    }
+
+    private void ColorAdd_Clicked(MouseUpEvent evt)
+    {
+        foreach (var item in BrickDatabase.BricksCategories)
+        {
+            item.AddItem(colorToAdd);
+        }
     }
 
     private void AddBrick_Clicked(MouseUpEvent evt)

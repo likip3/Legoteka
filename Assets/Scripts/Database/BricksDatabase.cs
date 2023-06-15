@@ -167,6 +167,14 @@ public class ListItem
         bricksLEGO.Add(new BrickDBItem(id, color, gameObject));
     }
 
+    public void AddItem(Color color)
+    {
+        var id = rnd.Next(100, 99999);
+        while (BrickDatabase.IsBrickIDTaken(id.ToString()))
+            id += 1;
+        bricksLEGO.Add(new BrickDBItem(id.ToString(), color, gameObject));
+    }
+
     public void DeleteItem(BrickDBItem item)
     {
         bricksLEGO.Remove(item);

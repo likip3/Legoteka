@@ -5,7 +5,13 @@
         <ui:Button text="Save To Database" display-tooltip-when-elided="true" name="save-database" style="height: 24px; width: 110px; -unity-font-style: bold;" />
     </ui:VisualElement>
     <ui:VisualElement style="flex-direction: row; width: 100%; height: 100%;">
-        <ui:ListView name="category-list" style="width: 40%; height: 100%; border-right-width: 1px; border-left-color: rgb(99, 99, 99); border-right-color: rgb(99, 99, 99); border-top-color: rgb(99, 99, 99); border-bottom-color: rgb(99, 99, 99);" />
+        <ui:VisualElement style="width: 40%; height: 100%;">
+            <ui:ListView name="category-list" style="width: 100%; height: 85%; border-right-width: 1px; border-left-color: rgb(99, 99, 99); border-right-color: rgb(99, 99, 99); border-top-color: rgb(99, 99, 99); border-bottom-color: rgb(99, 99, 99);" />
+            <ui:VisualElement name="color-adder" style="height: 15%; border-top-width: 1px; border-left-color: rgb(99, 99, 99); border-right-color: rgb(99, 99, 99); border-top-color: rgb(99, 99, 99); border-bottom-color: rgb(99, 99, 99); border-right-width: 1px;">
+                <ui:Label text="ColorAdder" display-tooltip-when-elided="true" style="-unity-font-style: bold; -unity-text-align: upper-center;" />
+                <ui:Button text="AddColor" display-tooltip-when-elided="true" name="color-add" tooltip="Add color to all categories" />
+            </ui:VisualElement>
+        </ui:VisualElement>
         <ui:VisualElement name="right-panel" style="width: 60%;">
             <ui:ListView focusable="true" name="bricks-list" style="height: 70%; border-bottom-width: 1px; border-left-color: rgb(99, 99, 99); border-right-color: rgb(99, 99, 99); border-top-color: rgb(99, 99, 99); border-bottom-color: rgb(99, 99, 99);" />
             <ui:VisualElement name="category-info" style="height: 30%; width: auto; display: none;">
