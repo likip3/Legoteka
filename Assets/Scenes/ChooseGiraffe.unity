@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1212,9 +1212,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2012161878}
         m_TargetAssemblyTypeName: UiControl, Assembly-CSharp
-        m_MethodName: SceneSettings
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1503,7 +1503,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2012161883}
         m_TargetAssemblyTypeName: UiControl, Assembly-CSharp
         m_MethodName: BackToMainMenu
         m_Mode: 1
@@ -2569,7 +2569,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 971831439}
         m_TargetAssemblyTypeName: UiControl, Assembly-CSharp
         m_MethodName: SceneSettings
         m_Mode: 1
@@ -4508,6 +4508,7 @@ GameObject:
   - component: {fileID: 2012161882}
   - component: {fileID: 2012161881}
   - component: {fileID: 2012161880}
+  - component: {fileID: 2012161883}
   m_Layer: 5
   m_Name: Instruction
   m_TagString: Untagged
@@ -4579,7 +4580,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2012161883}
         m_TargetAssemblyTypeName: UiControl, Assembly-CSharp
         m_MethodName: InstructionGiraffe
         m_Mode: 1
@@ -4629,6 +4630,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2012161878}
   m_CullTransparentMesh: 1
+--- !u!114 &2012161883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012161878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7fed853ff12aec4eaa11f2a42b33ddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2128334668
 GameObject:
   m_ObjectHideFlags: 0
