@@ -1052,8 +1052,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d678f870bf62f0e4aadb967c82af64c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textComponent: {fileID: 0}
   soundSource: {fileID: 1463846998}
+  InputSaveField: {fileID: 0}
 --- !u!1 &178339872
 GameObject:
   m_ObjectHideFlags: 0
@@ -8202,7 +8202,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 897932619}
         m_TargetAssemblyTypeName: UiControl, Assembly-CSharp
-        m_MethodName: BackToMainMenu
+        m_MethodName: FreeModeScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

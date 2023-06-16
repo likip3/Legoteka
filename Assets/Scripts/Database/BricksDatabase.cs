@@ -179,6 +179,8 @@ public class ListItem
 
     public void AddItem(string id, Color color)
     {
+        while (BrickDatabase.IsBrickIDTaken(id.ToString()))
+            id += 1;
         bricksLEGO.Add(new BrickDBItem(id, color, gameObject));
     }
 
@@ -286,8 +288,6 @@ public class BrickDBItem
 
     public BrickDBItem(string id, Color color, GameObject gameObject)
     {
-        while (BrickDatabase.IsBrickIDTaken(id.ToString()))
-            id += 1;
         brickID = id;
         this.color = color;
         if (gameObject is null) return;
